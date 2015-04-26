@@ -1,0 +1,32 @@
+<div class="col-md-8">
+	<div ng-repeat="post in homepagePosts | orderBy:'timestamp':true" ng-click="goToLink(post.link)" class="link vertical-truncate panel panel-default pointer">
+		<div class="panel-heading float-clearfix">
+			<b>{{ post.type }}</b>  {{ post.heading }} <div class="inline pull-right"><span am-time-ago="post.timestamp"></span></div>
+		</div>
+		<div class="fadeTop panel-body max-height" ng-if="post.preview" ng-bind-html="skipValidation(post.preview)"></div>
+		<div class="fadeBottom"></div>
+	</div>
+</div>
+<div class="col-md-4">
+	<div class="panel panel-default">
+		<div class="panel-heading"><b>Events</b></div>
+		<ul class="list-group">
+			<li class="list-group-item sub-heading">Upcoming</li>
+			<li ng-repeat="event in upcoming | orderBy:'unixStartTime':true" class="list-group-item">
+				{{event.event_name}}
+				<div class="sub-text">Starts <span am-time-ago="event.unixStartTime" am-preprocess="unix"></span></div>
+			</li>
+			<li class="list-group-item sub-heading">Current</li>
+			<li ng-repeat="event in current | orderBy:'unixEndTime':true" class="list-group-item">
+				{{event.event_name}}
+				<div class="sub-text">Ends <span am-time-ago="event.unixEndTime" am-preprocess="unix"></span></div>
+			</li>
+			<li class="list-group-item sub-heading">Recent</li>
+			<li ng-repeat="event in recent | orderBy:'unixEndTime':true" class="list-group-item">
+				{{event.event_name}}
+				<div class="sub-text">Finished <span am-time-ago="event.unixEndTime" am-preprocess="unix"></span></div>
+			</li>
+		</ul>
+	</div>
+
+</div>

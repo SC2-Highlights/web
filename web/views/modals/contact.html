@@ -1,0 +1,24 @@
+<div class="modal-header">
+    Send us a message about anything you want!
+</div>
+<div class="modal-body">
+    <div class="alert alert-success" role="alert" ng-if="message">{{ message }}</div>
+    <form name="contact">
+        <div class="form-group">
+            <label class="control-label">Name (Optional)</label>
+            <input type="text" class="form-control" ng-minlength="3" ng-maxlength="50" ng-model="data.name" name="name">
+        </div>
+        <div class="form-group">
+            <label class="control-label">Email (Optional)</label>
+            <input type="text" class="form-control" ng-minlength="3" ng-maxlength="255" ng-model="data.email" name="email">
+        </div>
+        <div class="form-group">
+            <label class="control-label">Message</label>
+            <textarea class="form-control" rows="3" ng-minlength="3" ng-model="data.message" name="message" required></textarea>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-if="!message" ng-disabled="contact.$invalid || lock" ng-click="submitContact(data)">Send</button>
+    <button class="btn btn-default" ng-click="cancel()">Close</button>
+</div>

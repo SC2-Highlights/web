@@ -1,0 +1,67 @@
+<div ng-hide="loading">
+	<div class="video col-xs-12" >
+		<div class="embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item" allowfullscreen ng-src="{{ highlight.fullYtUrl }}"></iframe>
+		</div>
+	</div>
+	<div class="col-sm-8">
+		<table class="table col-sm-12">
+			<tr>
+				<td colspan="2" class="title"><b>{{ highlight.title }}</b></td>
+			</tr>
+			<tr>
+				<td class="sub-heading">Date Added</td><td>{{ highlight.date_added | date:'MMM dd, yyyy' }}</td>
+			</tr>
+			<tr>
+				<td class="sub-heading">Rating</td><td>{{ highlight.rating }}</td>
+			</tr>
+            <tr>
+                <td class="sub-heading">Your rating</td>
+                <td>
+                    <rating ng-model="rate" max="max" on-hover="hoveringOver(value)" on-leave="overStar = null" ng-click="rateHighlight()"></rating>
+                </td>
+            </tr>
+			<tr>
+				<td class="sub-heading">Event</td><td>{{ highlight.event_name }}</td>
+			</tr>
+			<tr>
+				<td class="sub-heading">Players</td><td>{{ highlight.players }}</td>
+			</tr>
+			<tr>
+				<td class="sub-heading">Description</td><td>{{ highlight.description }}</td>
+			</tr>
+		</table>
+		<div class="col-sm-12">
+			<dir-disqus disqus-shortname="sc2hl"
+				 disqus-identifier="{{ highlight.highlight_id }}"
+				 disqus-title="{{ highlight.title }}"
+				 disqus-url="{{ highlight.url }}">
+			</dir-disqus>
+		</div>
+	</div>
+	<div class="col-sm-4">
+		<table class="table">
+			<tr>
+				<td colspan="2"><b>More From this Event</b></td>
+			</tr>
+			<tr ng-repeat="relatedHighlight in relatedHighlights" ng-hide="relatedHighlight.highlight_id == highlight.highlight_id">
+				<td colspan="2"><a ng-href="{{ '/highlight/' + relatedHighlight.highlight_id }}">{{ relatedHighlight.title }}</a></td>
+			</tr>
+			<tr>
+				<td colspan="2"><b>Event Details</b></td>
+			</tr>
+			<tr>
+				<td class="sub-heading">Start Date</td><td>{{ highlight.start_date | date:'MMM dd, yyyy' }}</td>
+			</tr>
+			<tr>
+				<td class="sub-heading">End Date</td><td>{{ highlight.end_date | date:'MMM dd, yyyy' }}</td>
+			</tr>
+			<tr>
+				<td class="sub-heading">Company</td><td>{{ highlight.company }}</td>
+			</tr>
+			<tr>
+				<td class="text-center" colspan="2"><img ng-src="{{ '/images/events/' + highlight.imgname }}"></td>
+			</tr>
+		</table>
+	</div>
+</div>

@@ -1,0 +1,32 @@
+<div class="modal-header">
+    Missing a highlight? Or something epic happened in your game? Submit your highlight now!
+</div>
+<div class="modal-body">
+    <div class="alert alert-success" role="alert" ng-if="message">{{ message }}</div>
+    <form name="suggestion">
+        <div class="form-group">
+            <label class="control-label">Name (Optional)</label>
+            <input type="text" class="form-control" ng-minlength="2" ng-maxlength="50" ng-model="data.name" name="name">
+        </div>
+        <div class="form-group">
+            <label class="control-label">Email (Optional)</label>
+            <input type="text" class="form-control" ng-minlength="3" ng-maxlength="255" ng-model="data.email" name="email">
+        </div>
+        <div class="form-group">
+            <label class="control-label">Link to replay or VoD</label>
+            <input type="text" class="form-control" ng-minlength="3" ng-maxlength="255" ng-model="data.link" name="link" required>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Time it happened in link</label>
+            <input type="text" class="form-control" ng-minlength="2" ng-maxlength="100" ng-model="data.time" name="time" required>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Description</label>
+            <input type="text" class="form-control" ng-minlength="5" ng-maxlength="1000" ng-model="data.description" name="description" required>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-default" ng-if="!message" ng-disabled="suggestion.$invalid || lock" ng-click="submitSuggestion(data)">Submit</button>
+    <button class="btn btn-default" ng-click="cancel()">Close</button>
+</div>

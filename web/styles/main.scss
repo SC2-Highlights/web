@@ -1,0 +1,341 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,700);
+
+$footer-height: 100px;
+$side-bar-width: 280px;
+$border: 1px solid #ccc;
+$top-bar-height: 50px;
+$link-color: #428bca;
+$purp: #8C489F;
+$standard-padding: 10px;
+
+/* General Rules */
+html {
+  overflow-y: scroll;
+  height: 100%;
+  body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    transition: all 1s ease-in;
+  }
+  .nomargin {
+    margin: 0;
+  }
+  .nopadding {
+    padding: 0;
+  }
+  .nopadding-right {
+    padding-right: 0;
+  }
+  .nopadding-left {
+    padding-left: 0;
+  }
+  .btn, input, li, .modal-content {
+    border-radius: 0 !important;
+  }
+  .pointer {
+    cursor: pointer;
+  }
+  a:hover {
+    color: $purp;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .link:hover {
+    cursor: pointer;
+    border-color: $purp;
+    transition: all 0.2s ease-in;
+  }
+  .inline {
+    display: inline-block;
+  }
+  .float-clearfix {
+    overflow: hidden;
+  }
+  h4 {
+    margin: 5px 0px 2px 0px;
+  }
+  .sub-heading {
+    font-weight: 400;
+  }
+  .sub-text {
+    font-size: 11px;
+  }
+  .max-height {
+    max-height: 150px;
+    overflow: hidden;
+    padding: 0;
+    margin: 15px;
+  }
+  .massive-text {
+    font-size: 15em;
+  }
+  .space-below {
+    margin-bottom: 60px;
+  }
+}
+
+/* Display whilst rendering */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+//.ng-enter{
+//	transition: 0.5s; opacity: 0;
+//}
+//.ng-enter-active{
+//	opacity: 1;
+//}
+//
+//.ng-leave{
+//	transition: 0.25s;
+//	opacity: 1;
+//}
+//.ng-leave-active{
+//	opacity: 0;
+//}
+
+/* Consistent divs */
+#wrapper {
+  height: 100%;
+  #top-bar {
+    z-index: 1003;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    background: #fff;
+    .btn {
+      border-top: 0;
+      font-size: 21px;
+      height: 50px;
+    }
+    .logo {
+      padding: 10px 10px 10px 5px;
+      img {
+        height: 30px;
+      }
+    }
+  }
+  #side-bar {
+    width: $side-bar-width;
+    overflow-y: auto;
+    height: 100%;
+    position: fixed;
+    border-right: $border;
+    background: #fff;
+    z-index: 1002;
+    .user {
+      margin-bottom: 15px;
+      border-bottom: $border;
+      .btn {
+        height: 40px;
+        border: 0;
+        &:first-child {
+          border-right: $border;
+        }
+        &:hover {
+          color: $purp;
+        }
+      }
+    }
+    .logo {
+      padding: 20px;
+      img {
+        width: 100%;
+      }
+    }
+    .search {
+      margin: 10px 10px 10px 10px;
+    }
+    .navigation {
+      a {
+        border-right: 0;
+        border-left: 5px solid #fff;
+        &:hover {
+          color: $purp;
+          cursor: pointer;
+          border-left: 5px solid $purp;
+          background: whitesmoke;
+        }
+      }
+    }
+    .side-bar-image {
+      margin-top: 10px;
+      img {
+        padding: 0 35px 0px 35px;
+        width: 100%;
+      }
+    }
+  }
+  #contentWrapper {
+    z-index: 1000;
+    height: 100%;
+    margin-left: $side-bar-width;
+    #content {
+      min-height: 100%;
+      overflow: hidden;
+      width: 100%;
+      margin-bottom: -$footer-height;
+      padding: 0 0 $footer-height+15px 0;
+      background: whitesmoke;
+      #page {
+        padding: 2% $standard-padding (20px + $footer-height) $standard-padding;
+        background: #fff;
+        margin: 0 auto;
+        overflow: hidden;
+        -webkit-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+        box-shadow: 3px 3px 8px 0px rgba(0, 0, 0, 0.3);
+        .heading {
+          margin-bottom: 20px;
+        }
+        .title {
+          font-size: 25px;
+          margin-bottom: 15px;
+        }
+        .pagination-sm {
+          margin:0;
+        }
+        .filter {
+          font-size:17px;
+        }
+      }
+    }
+    #footer {
+      padding: 8px 20px 0 20px;
+      font-size: 11px;
+      border-top: $border;
+      height: $footer-height;
+      background: #fff;
+      text-align: center;
+    }
+  }
+}
+
+/* Panel Styles */
+.panel {
+  border-radius: 0px;
+  .panel-body {
+    font-size: 14px;
+  }
+  .panel-heading {
+    border-radius: 0px;
+  }
+}
+
+/* Table Styles */
+.table {
+  thead {
+    th {
+      &:hover {
+        color: $purp;
+      }
+      color: $link-color;
+      cursor: pointer;
+    }
+  }
+  tbody {
+    tr {
+      &.row-hover:hover {
+        background: whitesmoke;
+        cursor: pointer;
+        color: $purp;
+      }
+      td {
+        vertical-align: middle;
+      }
+    }
+  }
+  .left-standard-width {
+    width: 105px;
+  }
+}
+
+.form-group {
+  margin: 8px 0 0 0;
+}
+
+.btn-block + .btn-social {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* Modal Styles */
+.modal-sm {
+  width: 350px;
+}
+
+.modal-footer {
+  margin: 0;
+}
+
+/* collapsed styles */
+@media screen and (max-width: 960px) {
+  #wrapper {
+    #top-bar {
+      height: $top-bar-height;
+      border-bottom: $border;
+    }
+    #side-bar {
+      z-index: 2002;
+      width: 0;
+      opacity: 0;
+      margin-top: 50px;
+      -webkit-transition: all 0.1s;
+      transition: all 0.1s;
+      &.active {
+        width: $side-bar-width;
+        opacity: 1;
+      }
+    }
+    #side-bar-remainder {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      z-index: 2001;
+      opacity: 0.5;
+      display: none;
+      &.active {
+        background: #000;
+        display: initial;
+      }
+    }
+    #contentWrapper {
+      margin-left: 0;
+      padding-top: 50px;
+      #content {
+        padding: 0;
+        #page {
+          height: 100%;
+          min-height: 100%;
+        }
+      }
+    }
+    .dissapear {
+      display: none;
+    }
+  }
+}
+
+.video {
+  z-index: 1001;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  padding-left: $standard-padding;
+  padding-right: $standard-padding;
+}
+
+.panel-group {
+  .panel {
+    border-radius: 0px;
+    .panel-body {
+      padding: $standard-padding;
+      padding-bottom: 0px;
+    }
+  }
+  .table {
+    margin-bottom: 0px;
+  }
+}
