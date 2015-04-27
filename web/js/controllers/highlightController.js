@@ -80,11 +80,17 @@ App.controller('highlightController', function($sce, $scope, $routeParams, $root
 	);
 });
 
-App.controller('HighlightListController', function($scope, Highlight, $location, $timeout){
+App.controller('HighlightListController', function($scope, Highlight, $location, $timeout, $filter){
+    $scope.filterHighlights = function() {
+        $scope.filteredHighlights = $filter('filter') ($scope.highlights, $scope.search);
+        $scope.totalItems = $scope.filteredHighlights.length;
+    }
+
+
     var highlights = Highlight.query(
 		function(){
 			$scope.highlights = highlights;
-			$scope.totalItems = highlights.length;
+			$scope.filterHighlights();
 		}
 	);
 
