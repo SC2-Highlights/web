@@ -60,7 +60,7 @@
 				<td class="sub-heading">Company</td><td>{{ highlight.company }}</td>
 			</tr>
 			<tr>
-				<td class="text-center" colspan="2"><img ng-src="{{ '/images/events/' + highlight.imgname }}"></td>
+				<td class="text-center" colspan="2"><img ng-src="{{ '/images/events/' + ( highlight.imgname || 'default.png' ) }}"></td>
 			</tr>
 		</table>
 	</div>
