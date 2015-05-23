@@ -27,6 +27,13 @@ App.config(
 				metaDescription: 'SC2HL\'s highlights',
 				width: '1380',
 			})
+			.when('/submitreplay', {
+				templateUrl: 'views/submitReplay.html',
+				controller: 'replayController',
+				metaTitle: 'Submit replay',
+				metaDescription: 'Submit replay',
+				width: '1380',
+			})
 			.when('/search/:subject', {
 				templateUrl: 'views/search.html',
 				controller: 'searchController',

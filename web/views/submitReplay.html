@@ -1,0 +1,41 @@
+<div class="title col-xs-12">Submit replay</div>
+<div class="col-xs-12">
+	<p>Hey everyone, you can submit your replays with highlights now!</p>
+
+	<form name="replayform" ng-controller="ReplayController">
+
+        <fieldset ng-if="!success">
+        <div class="form-group">
+            <label class="control-label">Name</label>
+            <input type="text" class="form-control" ng-minlength="3" ng-maxlength="50" ng-model="data.name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label class="control-label">Email</label>
+            <input type="email" class="form-control" ng-minlength="3" ng-maxlength="255" ng-model="data.email" name="email" required>
+        </div>
+
+        <div class="form-group" ng-repeat="e in errors">
+            <div class="well"><strong>Error:</strong> {{e}}</div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Replay</label>
+            <input name="replay" type="file" ng-model="replay" ngf-accept="'*.SC2Replay'" ngf-select required>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Description</label>
+            <textarea class="form-control" rows="3" ng-minlength="3" ng-model="data.message" name="message" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <button ng-disabled="replayform.$invalid || lock" class="btn btn-default" ng-click="submitReplay(data, replay)">Submit</button>
+        </div>
+        </fieldset>
+
+        <div ng-if="success">
+             <div class="well">{{message}}</div>
+        </div>
+    </form>
+	
+</div>
