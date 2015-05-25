@@ -1,6 +1,6 @@
 var App = angular.module(
     'sc2hl',
-    ['ngRoute', 'ngResource', 'ui.bootstrap', 'angularMoment', 'angular-loading-bar', 'ngAnimate', 'ngSanitize', 'analytics']
+    ['ngRoute', 'ngResource', 'ui.bootstrap', 'angularMoment', 'angular-loading-bar', 'ngAnimate', 'ngSanitize', 'analytics', 'ngFileUpload']
 );
 
 App.config(
