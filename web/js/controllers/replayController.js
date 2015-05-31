@@ -1,5 +1,5 @@
 
-App.controller('ReplayController', function($sce, $scope, $location, $rootScope, Upload) {
+App.controller('replayController', function($sce, $scope, $location, $rootScope, Upload) {
 
     $scope.submitReplay = function (data, replay) {
         Upload.upload({
