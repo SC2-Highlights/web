@@ -32,5 +32,6 @@
   },
   "resolutions": {
     "angular": "~1.2.16"
-  }
+  },
+  "directory": "web/bower_components"
 }

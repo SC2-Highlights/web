@@ -1,3 +1,7 @@
+# Built files
+web/bower_components
+node_modules
+
+# IDE
 /nbproject
 .idea
-web/bower_components
