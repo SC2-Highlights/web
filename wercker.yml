@@ -1,4 +1,4 @@
-box: wercker/nodejs
+box: wercker/nodejs@1
 build:
     steps:
         - script:
