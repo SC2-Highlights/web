@@ -13,3 +13,9 @@ deploy:
             hostname: sc2hl.com
         - add-ssh-key:
             keyname: KEYNAME
+        - script:
+            name: install rsync
+            code: sudo apt-get install rsync
+        -script:
+            name: rsync files
+            code: rsync --delete -r web/ sc2hl.com:/var/www/sc2hl/live
