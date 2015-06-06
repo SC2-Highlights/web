@@ -7,3 +7,9 @@ build:
         - script:
             name: run bower install
             code: bower install
+deploy:
+    steps:
+        - add-to-known_hosts:
+            hostname: sc2hl.com
+        - add-ssh-key:
+            keyname: KEYNAME
