@@ -1,6 +1,6 @@
 var App = angular.module(
     'sc2hl',
-    ['ngRoute', 'ngResource', 'ui.bootstrap', 'angularMoment', 'angular-loading-bar', 'ngAnimate', 'ngSanitize', 'analytics']
+    ['ngRoute', 'ngResource', 'ui.bootstrap', 'angularMoment', 'angular-loading-bar', 'ngAnimate', 'ngSanitize', 'analytics', 'ngFileUpload']
 );
 
 App.config(
@@ -25,6 +25,13 @@ App.config(
 				controller: 'highlightController',
 				metaTitle: 'Highlight',
 				metaDescription: 'SC2HL\'s highlights',
+				width: '1380',
+			})
+			.when('/submitreplay', {
+				templateUrl: 'views/submitReplay.html',
+				controller: 'replayController',
+				metaTitle: 'Submit replay',
+				metaDescription: 'Submit replay',
 				width: '1380',
 			})
 			.when('/search/:subject', {
