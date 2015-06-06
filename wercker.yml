@@ -16,6 +16,6 @@ deploy:
         - script:
             name: install rsync
             code: sudo apt-get install rsync
-        -script:
+        - script:
             name: rsync files
             code: rsync --delete -r web/ sc2hl.com:/var/www/sc2hl/live
