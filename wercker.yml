@@ -18,4 +18,4 @@ deploy:
             code: sudo apt-get install rsync
         - script:
             name: rsync files
-            code: rsync --delete -r web/ wercker@sc2hl.com:/var/www/sc2hl/live
+            code: rsync --delete -r web/ wercker@sc2hl.com:/var/www/sc2hl/$WERCKER_GIT_BRANCH
