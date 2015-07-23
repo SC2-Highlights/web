@@ -1,11 +1,56 @@
 <div class="col-md-8">
-	<div ng-repeat="post in homepagePosts | orderBy:'timestamp':true" ng-click="goToLink(post.link)" class="link vertical-truncate panel panel-default pointer">
-		<div class="panel-heading float-clearfix">
-			<b>{{ post.type }}</b>  {{ post.heading }} <div class="inline pull-right"><span am-time-ago="post.timestamp"></span></div>
+	<h3><span class="glyphicon glyphicon-fire"></span> Most recent Highlights</h3>
+	<div ng-repeat="highlight in recentHighlights" class="col-lg-4">
+		<div ng-click="goToLink('/highlight/' + highlight.highlight_id)" class="highlight-link-box panel panel-default pointer">
+			<img class="img-responsive" ng-src="{{ 'http://img.youtube.com/vi/' + highlight.yt_url  + '/mqdefault.jpg' || 'images/blog-post-default.jpg' }}">
+			<div class="panel-heading float-clearfix">
+				<strong>{{ highlight.title | limitTo:30 }} {{highlight.title.length < 30 ? '' : '..'}}</strong>
+			</div>
+
+			<div class="panel-body">
+				<span class="glyphicon glyphicon-time"></span> <span am-time-ago="highlight.date_added"></span> <span class="pull-right"><rating ng-model="highlight.rating" max="5" readonly="true"></rating></span>
+			</div>
+			<div class="fadeTop panel-body max-height" ng-if="highlight.preview" ng-bind-html="skipValidation(highlight.preview)"></div>
+			<div class="fadeBottom"></div>
 		</div>
-		<div class="fadeTop panel-body max-height" ng-if="post.preview" ng-bind-html="skipValidation(post.preview)"></div>
-		<div class="fadeBottom"></div>
 	</div>
+
+	<div class="col-md-12"><a class="btn btn-primary btn-homepage" ng-click="goToLink('/highlight/')">Show All Highlights</a></div>
+
+	<h3><span class="glyphicon glyphicon-star"></span> Top rated Highlights</h3>
+
+	<div ng-repeat="highlight in topHighlights" class="col-lg-4">
+		<div ng-click="goToLink('/highlight/' + highlight.highlight_id)" class="highlight-link-box panel panel-default pointer">
+			<img class="img-responsive" ng-src="{{ 'http://img.youtube.com/vi/' + highlight.yt_url  + '/mqdefault.jpg' || 'images/blog-post-default.jpg' }}">
+			<div class="panel-heading float-clearfix">
+				<strong>{{ highlight.title | limitTo:30 }} {{highlight.title.length < 30 ? '' : '..'}}</strong>
+			</div>
+
+			<div class="panel-body">
+				<span class="glyphicon glyphicon-time"></span> <span am-time-ago="highlight.date_added"></span> <span class="pull-right"><rating ng-model="highlight.rating" max="5" readonly="true"></rating></span>
+			</div>
+			<div class="fadeTop panel-body max-height" ng-if="highlight.preview" ng-bind-html="skipValidation(highlight.preview)"></div>
+			<div class="fadeBottom"></div>
+		</div>
+	</div>
+
+	<h3><span class="glyphicon glyphicon-random"></span> Random Highlights</h3>
+
+	<div ng-repeat="highlight in randomHighlights" class="col-lg-4">
+		<div ng-click="goToLink('/highlight/' + highlight.highlight_id)" class="highlight-link-box panel panel-default pointer">
+			<img class="img-responsive" ng-src="{{ 'http://img.youtube.com/vi/' + highlight.yt_url  + '/mqdefault.jpg' || 'images/blog-post-default.jpg' }}">
+			<div class="panel-heading float-clearfix">
+				<strong>{{ highlight.title | limitTo:30 }} {{highlight.title.length < 30 ? '' : '..'}}</strong>
+			</div>
+
+			<div class="panel-body">
+				<span class="glyphicon glyphicon-time"></span> <span am-time-ago="highlight.date_added"></span> <span class="pull-right"><rating ng-model="highlight.rating" max="5" readonly="true"></rating></span>
+			</div>
+			<div class="fadeTop panel-body max-height" ng-if="highlight.preview" ng-bind-html="skipValidation(highlight.preview)"></div>
+			<div class="fadeBottom"></div>
+		</div>
+	</div>
+
 </div>
 <div class="col-md-4">
 	<div class="panel panel-default">
@@ -28,5 +73,4 @@
 			</li>
 		</ul>
 	</div>
-
 </div>
