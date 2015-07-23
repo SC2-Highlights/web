@@ -73,6 +73,14 @@ html {
   .space-below {
     margin-bottom: 60px;
   }
+
+  h3 {
+    margin: 0 0 15px 10px;
+  }
+
+  .btn-homepage {
+    margin-bottom: 15px;
+  }
 }
 
 /* Display whilst rendering */
@@ -221,6 +229,25 @@ html {
   }
   .panel-heading {
     border-radius: 0px;
+  }
+}
+
+.highlight-link-box {
+  .panel-body {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: 11px;
+  }
+
+  &:hover {
+    border-color: $purp;
+    transition: all 0.2s ease-in;
+
+    .panel-heading {
+      background: $purp;
+      color: #fff;
+      transition: all 0.2s ease-in;
+    }
   }
 }
 
