@@ -4,7 +4,25 @@ App.factory('HomepagePost',function($resource){
 	);
 });
 
-App.controller('homepageController', function($sce, $scope, $location, $rootScope, Event, HomepagePost){
+App.factory('RecentHighlight', function($resource) {
+	return $resource(
+		'http://api.sc2hl.com/blog/highlight/recent/:limit'
+	);
+});
+
+App.factory('TopHighlight', function($resource) {
+	return $resource(
+		'http://api.sc2hl.com/blog/highlight/top/:limit'
+	);
+});
+
+App.factory('RandomHighlight', function($resource) {
+	return $resource(
+		'http://api.sc2hl.com/blog/highlight/random/:limit'
+	);
+});
+
+App.controller('homepageController', function($sce, $scope, $location, $rootScope, Event, RecentHighlight, TopHighlight, RandomHighlight){
 	var events = Event.query(
 		function(){
 			$scope.events = events;
@@ -36,12 +54,36 @@ App.controller('homepageController', function($sce, $scope, $location, $rootScop
 		return $sce.trustAsHtml(value);
 	};
 
-	var homepagePosts = HomepagePost.query(
-		function(){
-			$scope.homepagePosts = homepagePosts;
-			$scope.totalItems = homepagePosts.length;
+	var recentHighlights = RecentHighlight.query(
+		{
+			limit: 3
+		},
+
+		function() {
+			$scope.recentHighlights = recentHighlights;
 		}
 	);
+
+	var topHighlights = TopHighlight.query(
+		{
+			limit: 3
+		},
+
+		function() {
+			$scope.topHighlights = topHighlights;
+		}
+	);
+
+	var randomHighlights = RandomHighlight.query(
+		{
+			limit: 3
+		},
+
+		function() {
+			$scope.randomHighlights = randomHighlights;
+		}
+	);
+
 });
 
 App.controller('blogController', function($sce, $scope, $routeParams, $rootScope, $location, HomepagePost){
