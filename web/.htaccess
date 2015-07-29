@@ -1,11 +1,11 @@
 # html5 pushstate (history) support:
 <ifModule mod_rewrite.c>
 	RewriteEngine On
-	
-	# allow social media crawlers to work by redirecting them to a server-rendered static version on the page
-	RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit/[0-9]|Twitterbot)
+
+	# Redirect social media crawlers
+	RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit/[0-9]|Twitterbot|redditbot)
 	RewriteRule highlight/(\d*)$ http://api.sc2hl.com/static/highlight/$1 [P]
-	
+
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_URI} !index
