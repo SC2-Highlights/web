@@ -30,8 +30,8 @@ App.config(
 			.when('/submitreplay', {
 				templateUrl: 'views/submitReplay.html',
 				controller: 'replayController',
-				metaTitle: 'Submit replay',
-				metaDescription: 'Submit replay',
+				metaTitle: 'Submit Your Replay',
+				metaDescription: 'Submit Your Replay',
 				width: '1380',
 			})
 			.when('/search/:subject', {
