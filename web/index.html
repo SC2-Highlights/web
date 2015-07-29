@@ -34,9 +34,14 @@
 				<ul class="navigation list-group" ng-controller="userMenu">
 					<a ng-href="/" class="list-group-item nav-button">Home</a>
 					<a ng-href="/highlight" class="list-group-item nav-button">Highlights</a>
+					<a ng-href="/submitreplay" class="list-group-item nav-button">Submit Your Replay</a>
                     <a ng-click="openSuggestForm()" class="list-group-item nav-button">Suggest Highlight</a>
 				</ul>
-				<a href="http://bit.ly/JORDwatches"><img class="img-responsive center-block" src="/images/jord-woodwatches.png" alt="JORD woodwatches"></a>
+				<img usemap="#image-map" class="img-responsive center-block" src="/images/lotv-preorder-ad.png" alt="Support SC2HL, preorder LOTV!">
+				<map name="image-map" id="image-map">
+					<area shape="rect" coords="140,104,237,135" alt="Amazon US" href="#us">
+       				<area shape="rect" coords="140,145,237,176" alt="Amazon UK" href="#uk">
+				</map>
 			</div>
 			<div id="side-bar-remainder">
 			</div>
@@ -69,13 +74,17 @@
 		<script src="/bower_components/moment/min/moment.min.js"></script>
 		<script src="/bower_components/angular-moment/angular-moment.min.js"></script>
 		<script src="/bower_components/angular-loading-bar/src/loading-bar.js"></script>
-        <script src="/js/analyticsService.js"></script>
+		<script src="/bower_components/angular-loading-bar/src/loading-bar.js"></script>
+		<script src="/bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script> 
+		<script src="/bower_components/ng-file-upload/ng-file-upload.min.js"></script> 
+        	<script src="/js/analyticsService.js"></script>
 
 		<script src="/js/app.js?v3"></script>
 		<script src="/js/main.js?v3"></script>
 		<script src="/js/controllers/homepageController.js?v3"></script>
 		<script src="/js/controllers/highlightController.js?v3"></script>
 		<script src="/js/controllers/searchController.js?v3"></script>
-        <script src="/js/controllers/modalController.js?v3"></script>
+        	<script src="/js/controllers/modalController.js?v3"></script>
+        	<script src="/js/controllers/replayController.js?v3"></script>
 	</body>
 </html>
