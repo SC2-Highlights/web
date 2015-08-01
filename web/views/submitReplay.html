@@ -1,13 +1,16 @@
 <div class="title col-xs-12">Submit Your Replay</div>
 <div class="col-xs-12">
+    <p>Hello everyone,</p>
+    <p>We're starting a weekly series featuring Top community highlights. Please submit your replays below, and provide information (time/what happened) in the description! Please be detailed so its easier for us. Adding a video of your highlight would be ideal.</p>
+    <p>The highlights can be anything. Great micro, an incredibly close basetrade. Anything you dont see in your everyday Starcraft II game!</p>
 	<form name="replayform" ng-controller="replayController">
         <fieldset ng-if="!success">
         <div class="form-group">
-            <label class="control-label">Name</label>
+            <label class="control-label">Username</label>
             <input type="text" class="form-control" ng-minlength="3" ng-maxlength="50" ng-model="data.name" name="name" required>
         </div>
         <div class="form-group">
-            <label class="control-label">Email</label>
+            <label class="control-label">Email (optional)</label>
             <input type="email" class="form-control" ng-minlength="3" ng-maxlength="255" ng-model="data.email" name="email">
         </div>
 
