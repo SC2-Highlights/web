@@ -10,6 +10,7 @@ build:
 deploy:
     steps:
         - s3sync:
+            source-dir: web/
             delete-removed: true
             bucket-url: $AWS_BUCKET_URL
             key-id: $AWS_ACCESS_KEY_ID
