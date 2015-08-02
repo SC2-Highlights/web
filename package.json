@@ -1,0 +1,33 @@
+{
+  "name": "sc2hl-front",
+  "version": "0.0.0",
+  "description": "Sc2HL Front End",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/EsportsHL/sc2hl-front.git"
+  },
+  "keywords": [
+    "sc2hl"
+  ],
+  "author": "sis",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/EsportsHL/sc2hl-front/issues"
+  },
+  "dependencies": {
+    "gulp": "~3.9.0"
+  },
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-imagemin": "~2.3.0",
+    "imagemin-pngquant": "~4.1.2",
+    "gulp-sass": "~2.0.4",
+    "gulp-concat": "~2.6.0",
+    "gulp-minify-css": "~1.2.0",
+    "gulp-rename": "~1.2.2",
+    "gulp-cachebust": "0.0.5",
+    "gulp-minify-html": "~1.0.4",
+    "gulp-cache-breaker": "0.0.3",
+    "gulp-uglify": "~1.2.0"
+  }
+}
