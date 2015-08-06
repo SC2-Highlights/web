@@ -1,3 +1,11 @@
-# SC2HL #
+# SC2HL
 
-TODO: Fill this readme
+The SC2HL front end angular project
+
+## Installation
+
+Install the node packages
+`npm install`
+
+Run gulp to build
+`gulp`
