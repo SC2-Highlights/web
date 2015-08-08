@@ -6,7 +6,7 @@ build:
             code: npm install
         - script:
             name: run gulp
-            code: gulp
+            code: node_modules/.bin/gulp
 deploy:
     steps:
         - s3sync:
