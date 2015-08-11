@@ -1,8 +1,15 @@
 <div class="title col-xs-12">Submit Your Replay</div>
 <div class="col-xs-12">
-    <p>Hello everyone,</p>
-    <p>We're starting a weekly series featuring Top community highlights. Please submit your replays below, and provide information (time/what happened) in the description! Please be detailed so its easier for us. Adding a video of your highlight would be ideal.</p>
-    <p>The highlights can be anything. Great micro, an incredibly close basetrade. Anything you dont see in your everyday Starcraft II game!</p>
+    	<p>Hello everyone,</p>
+    	<p>We're starting a weekly series featuring Top community highlights. Please submit your replays below, and provide information (time/what happened) in the description! Please be detailed so its easier for us. Adding a video of your highlight would be ideal.</p>
+    	<p>The highlights can be anything. Great micro, an incredibly close basetrade. Anything you dont see in your everyday Starcraft II game!</p>
+
+	<div class="panel panel-default">
+  		<div class="panel-body">
+    			<strong>Note:</strong> We get a lot of replays, please include timestamp(s). We will not look at ones without. 
+  		</div>
+	</div>
+	
 	<form name="replayform" ng-controller="replayController">
         <fieldset ng-if="!success">
         <div class="form-group">
@@ -22,6 +29,20 @@
             <label class="control-label">Replay</label>
             <input name="replay" type="file" ng-model="replay" ngf-accept="'*.SC2Replay'" ngf-select required>
         </div>
+        
+        <div class="radio">
+  		<label>
+    			<input type="radio" name="game" id="gameHots" value="HOTS" checked>
+    			Heart of the Swarm
+  		</label>
+	</div>
+	
+	<div class="radio">
+  		<label>
+    			<input type="radio" name="game" id="gameLotv" value="LOTV">
+    			Legacy of the Void
+  		</label>
+	</div>
 
         <div class="form-group">
             <label class="control-label">Description</label>
