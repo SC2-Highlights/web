@@ -1,12 +1,12 @@
-App.factory('ContactService',function($resource){
+App.factory('ContactService',function($resource, configService){
     return $resource(
-        'http://api.sc2hl.com/contact'
+        configService.api_url + '/contact'
     );
 });
 
-App.factory('SuggestService',function($resource){
+App.factory('SuggestService',function($resource, configService){
     return $resource(
-        'http://api.sc2hl.com/suggestion'
+        configService.api_url + '/suggestion'
     );
 });
 

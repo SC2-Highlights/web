@@ -1,9 +1,9 @@
 
-App.controller('replayController', function($sce, $scope, $location, $rootScope, Upload) {
+App.controller('replayController', function($sce, $scope, $location, $rootScope, Upload, configService) {
 
     $scope.submitReplay = function (data, replay) {
         Upload.upload({
-            url: 'http://api.sc2hl.com/submitreplay',
+            url: configService.api_url + '/submitreplay',
             header: {'Content-Type': replay.type},
             method: 'POST',
             data: data,

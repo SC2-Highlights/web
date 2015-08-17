@@ -3,6 +3,13 @@ var App = angular.module(
     ['ngRoute', 'ngResource', 'ui.bootstrap', 'angularMoment', 'angular-loading-bar', 'ngAnimate', 'ngSanitize', 'analytics', 'ngFileUpload']
 );
 
+App.factory('configService', function() {
+  return {
+      api_url  : 'http://api.sc2hl.com',
+      site_url : 'http://sc2hl.com'
+  };
+});
+
 App.config(
 	['$routeProvider', '$locationProvider',  function($routeProvider, $locationProvider) {
 		$routeProvider
