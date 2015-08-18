@@ -1,6 +1,6 @@
-App.factory('Highlight', function($resource){
+App.factory('Highlight', function($resource, configService){
 	return $resource(
-		'http://api.sc2hl.com/highlight/:id',
+		configService.api_url + '/highlight/:id',
         null,
         {
             rate: { method:'PUT' }
@@ -8,19 +8,19 @@ App.factory('Highlight', function($resource){
 	);
 });
 
-App.factory('Event', function($resource){
+App.factory('Event', function($resource, configService){
 	return $resource(
-		'http://api.sc2hl.com/event/:id'
+		configService.api_url + '/event/:id'
 	);
 });
 
-App.factory('RelatedHighlight', function($resource){
+App.factory('RelatedHighlight', function($resource, configService){
 	return $resource(
-		'http://api.sc2hl.com/highlight/event/:id'
+		configService.api_url + '/event/:id'
 	);
 });
 
-App.controller('highlightController', function($sce, $scope, $routeParams, $rootScope, $location, Highlight, Event, RelatedHighlight){
+App.controller('highlightController', function($sce, $scope, $routeParams, $rootScope, $location, Highlight, Event, RelatedHighlight, configService){
 	$scope.showHighlight = function(highlightId) {
 		$location.path('/highlight/' + highlightId);
 	};
@@ -54,7 +54,7 @@ App.controller('highlightController', function($sce, $scope, $routeParams, $root
 			}
 
 			highlight.fullYtUrl = $sce.trustAsResourceUrl('https://www.youtube.com/embed/' + highlight.yt_url + '?autoplay=1&showinfo=0');
-			highlight.url = 'http://sc2hl.com/highlight/' + highlight.highlight_id;
+			highlight.url = configService.site_url + '/highlight/' + highlight.highlight_id;
 			$scope.highlight = highlight;
 			$rootScope.metaTitle = highlight.title;
 			$scope.rate = highlight.userRating;
