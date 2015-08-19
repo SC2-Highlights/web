@@ -1,5 +1,5 @@
 
-App.controller('replayController', function($sce, $scope, $location, $rootScope, Upload, configService) {
+App.controller('replayController', function($sce, $scope, $location, $rootScope, $route, Upload, configService) {
 
     $scope.submitReplay = function (data, replay) {
         Upload.upload({
@@ -9,10 +9,15 @@ App.controller('replayController', function($sce, $scope, $location, $rootScope,
             data: data,
             file: replay
         }).success(function(data) {
-            var response = angular.fromJson(data);
-
-            $scope.message = response.message;
-            $scope.success = response.success;
+            $scope.success = true;
+            $scope.data = data;
+        }).error(function(data) {
+            $scope.success = false;
+            $scope.data = data;
         });
+    };
+
+    $scope.sendAnotherReplay = function () {
+        $route.reload();
     };
 });
