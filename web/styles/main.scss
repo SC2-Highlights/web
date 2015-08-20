@@ -160,6 +160,11 @@ html {
       a {
         border-right: 0;
         border-left: 5px solid #fff;
+
+        span {
+          margin-right: 10px;
+        }
+        
         &:hover {
           color: $purp;
           cursor: pointer;
