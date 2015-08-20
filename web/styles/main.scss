@@ -76,6 +76,14 @@ html {
 
   h3 {
     margin: 0 0 15px 10px;
+
+    span {
+      margin-right: 5px;
+
+      &.glyphicon-random {
+        margin-right: 12px;
+      }
+    }
   }
 
   .btn-homepage {
@@ -164,7 +172,7 @@ html {
         span {
           margin-right: 10px;
         }
-        
+
         &:hover {
           color: $purp;
           cursor: pointer;
