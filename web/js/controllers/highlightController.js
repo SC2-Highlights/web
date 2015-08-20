@@ -20,6 +20,19 @@ App.factory('RelatedHighlight', function($resource, configService){
 	);
 });
 
+App.controller('randomHighlightController', function($sce, $scope, $routeParams, $rootScope, $location, RandomHighlight){
+	var randomHighlights = RandomHighlight.query(
+		{
+			limit: 3
+		},
+
+		function() {
+			$location.path('/highlight/' + randomHighlights[0].highlight_id);
+		}
+	);
+	
+});
+
 App.controller('highlightController', function($sce, $scope, $routeParams, $rootScope, $location, Highlight, Event, RelatedHighlight, configService){
 	$scope.showHighlight = function(highlightId) {
 		$location.path('/highlight/' + highlightId);

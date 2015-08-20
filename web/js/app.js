@@ -27,6 +27,13 @@ App.config(
 				metaDescription: 'A list of all the highlights on SC2HL',
 				width: '1380',
 			})
+			.when('/random', {
+				templateUrl: 'views/highlight.html',
+				controller: 'randomHighlightController',
+				metaTitle: 'Random highlight',
+				metaDescription: 'Show a random highlight',
+				width: '1380',
+			})
 			.when('/highlight/:id', {
 				templateUrl: 'views/highlight.html',
 				controller: 'highlightController',
