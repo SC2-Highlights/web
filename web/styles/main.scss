@@ -173,6 +173,10 @@ html {
           margin-right: 10px;
         }
 
+        &.active-item {
+          background: whitesmoke;
+        }
+
         &:hover {
           color: $purp;
           cursor: pointer;

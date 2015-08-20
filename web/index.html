@@ -30,10 +30,10 @@
 					</a>
 				</div>
 				<ul class="navigation list-group" ng-controller="userMenu">
-					<a ng-href="/" class="list-group-item nav-button"><span class="glyphicon glyphicon-home"></span> Home</a>
-					<a ng-href="/highlight" class="list-group-item nav-button"><span class="glyphicon glyphicon-star"></span> Highlights</a>
+					<a ng-href="/" class="list-group-item nav-button" ng-class="getClass('/')"><span class="glyphicon glyphicon-home"></span> Home</a>
+					<a ng-href="/highlight" class="list-group-item nav-button" ng-class="getClass('/highlight')"><span class="glyphicon glyphicon-star"></span> Highlights</a>
 					<a ng-href="/random" class="list-group-item nav-button"><span class="glyphicon glyphicon-random"></span> Random Highlight</a>
-					<a ng-href="/submitreplay" class="list-group-item nav-button"><span class="glyphicon glyphicon-open-file"></span> Submit Your Replay</a>
+					<a ng-href="/submitreplay" class="list-group-item nav-button" ng-class="getClass('/submitreplay')"><span class="glyphicon glyphicon-open-file"></span> Submit Your Replay</a>
                     <a ng-click="openSuggestForm()" class="list-group-item nav-button"><span class="glyphicon glyphicon-thumbs-up"></span> Suggest Highlight</a>
 				</ul>
 				<img usemap="#image-map" class="img-responsive center-block" src="/images/lotv-preorder-ad.png" alt="Support SC2HL, preorder LOTV!">
