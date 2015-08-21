@@ -10,7 +10,7 @@ var uglify = require('gulp-uglify');
 var bower = require('gulp-bower');
 var ngAnnotate = require('gulp-ng-annotate');
 
-gulp.task('default', ['bower','images', 'scripts', 'html', 'styles', 'htaccess'], function() {});
+gulp.task('default', ['bower','images', 'scripts', 'html', 'styles', 'htaccess']);
 
 gulp.task('bower', function() {
     return bower('./bower_components');
@@ -94,4 +94,12 @@ gulp.task('html', function () {
 gulp.task('htaccess', function() {
     return gulp.src('web/.htaccess')
         .pipe(gulp.dest('dist'));
+});
+
+gulp.task('watch', function() {
+    gulp.watch('web/.htaccess', ['htaccess']);
+    gulp.watch('web/**/*.html', ['html']);
+    gulp.watch('web/styles/*.scss', ['styles']);
+    gulp.watch(['web/js/*.js', 'web/js/controllers/*.js'], ['scripts']);
+    gulp.watch('web/images/**/*', ['images']);
 });
