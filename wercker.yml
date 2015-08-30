@@ -1,12 +1,12 @@
-box: wercker/nodejs@1
+box: wercker/nodejs
 build:
     steps:
         - script:
-            name: install bower
-            code: sudo npm install -g bower
+            name: install node packages
+            code: npm install
         - script:
-            name: run bower install
-            code: bower install
+            name: run gulp
+            code: node_modules/.bin/gulp
 deploy:
     steps:
         - s3sync:
@@ -24,4 +24,4 @@ deploy:
             code: sudo apt-get install rsync
         - script:
             name: rsync files
-            code: rsync --delete -r web/ wercker@sc2hl.com:/var/www/sc2hl/$WERCKER_GIT_BRANCH
+            code: rsync --delete -r dist/ wercker@sc2hl.com:/var/www/sc2hl/$WERCKER_GIT_BRANCH

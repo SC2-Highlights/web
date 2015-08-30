@@ -23,7 +23,7 @@
     "angular-resource": "~1.2.16",
     "angular-bootstrap": "~0.11.0",
     "angular-moment": "~0.7.1",
-    "bootstrap": "~3.2.0",
+    "bootstrap": "~3.3.5",
     "angular-google-plus": "~0.1.2",
     "bootstrap-social": "~4.5.1",
     "angular-loading-bar": "~0.4.3",
@@ -33,6 +33,5 @@
   },
   "resolutions": {
     "angular": "~1.2.16"
-  },
-  "directory": "web/bower_components"
+  }
 }

@@ -1,6 +1,6 @@
-App.factory('Search',function($resource){
+App.factory('Search',function($resource, configService){
 	return $resource(
-        'http://localhost:3000/highlight/search/:subject'
+        configService.api_url + '/highlight/search/:subject'
 	);
 });
 

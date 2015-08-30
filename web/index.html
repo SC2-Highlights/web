@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="sc2hl"><!-- ng-controller="loginCtrl"> -->
+<html ng-app="sc2hl">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +7,9 @@
 		<meta name="description" content="{{ metaDescription }}">
 		<meta name="viewport" content="width=device-width">
 		<meta property="og:image" content="http://sc2hl.com/images/logo_thumbnail.png" />
-		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css" />
-		<link rel="stylesheet" href="/bower_components/bootstrap-social/bootstrap-social.css" />
-		<link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css" />
-		<link rel="stylesheet" href="/bower_components/angular-loading-bar/src/loading-bar.css" />
-		<link rel="stylesheet" href="/styles/main.css">
+		<meta name="google-site-verification" content="bPu74eO9s3PgV-I8vnCNoTy-GrCrJT-BYCwnaOKNVeU" />
+		<link rel="stylesheet" href="{{cache-break:/bower-main.css}}">
+		<link rel="stylesheet" href="{{cache-break:/main.css}}">
 		<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
 		<base href="/" />
 	</head>
@@ -32,10 +30,11 @@
 					</a>
 				</div>
 				<ul class="navigation list-group" ng-controller="userMenu">
-					<a ng-href="/" class="list-group-item nav-button">Home</a>
-					<a ng-href="/highlight" class="list-group-item nav-button">Highlights</a>
-					<a ng-href="/submitreplay" class="list-group-item nav-button">Submit Your Replay</a>
-                    <a ng-click="openSuggestForm()" class="list-group-item nav-button">Suggest Highlight</a>
+					<a ng-href="/" class="list-group-item nav-button" ng-class="getClass('/')"><span class="glyphicon glyphicon-home"></span> Home</a>
+					<a ng-href="/highlight" class="list-group-item nav-button" ng-class="getClass('/highlight')"><span class="glyphicon glyphicon-star"></span> Highlights</a>
+					<a ng-href="/random" class="list-group-item nav-button"><span class="glyphicon glyphicon-random"></span> Random Highlight</a>
+					<a ng-href="/submitreplay" class="list-group-item nav-button" ng-class="getClass('/submitreplay')"><span class="glyphicon glyphicon-open-file"></span> Submit Your Replay</a>
+                    <a ng-click="openSuggestForm()" class="list-group-item nav-button"><span class="glyphicon glyphicon-thumbs-up"></span> Suggest Highlight</a>
 				</ul>
 				<a href="http://bit.ly/JORDwatches"><img class="img-responsive center-block" src="/images/jord-woodwatches.png" alt="JORD woodwatches"></a>
 			</div>
@@ -58,29 +57,6 @@
 				</div>
 			</div>
 		</div>
-
-		<script src="/bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="/bower_components/angular/angular.min.js"></script>
-		<script src="/bower_components/angular-route/angular-route.min.js"></script>
-		<script src="/bower_components/angular-resource/angular-resource.min.js"></script>
-		<script src="/bower_components/angular-animate/angular-animate.min.js"></script>
-		<script src="/bower_components/angular-sanitize/angular-sanitize.min.js"></script>
-		<script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-		<script src="/bower_components/moment/min/moment.min.js"></script>
-		<script src="/bower_components/angular-moment/angular-moment.min.js"></script>
-		<script src="/bower_components/angular-loading-bar/src/loading-bar.js"></script>
-		<script src="/bower_components/angular-loading-bar/src/loading-bar.js"></script>
-		<script src="/bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script> 
-		<script src="/bower_components/ng-file-upload/ng-file-upload.min.js"></script> 
-        	<script src="/js/analyticsService.js"></script>
-
-		<script src="/js/app.js?v3"></script>
-		<script src="/js/main.js?v3"></script>
-		<script src="/js/controllers/homepageController.js?v3"></script>
-		<script src="/js/controllers/highlightController.js?v3"></script>
-		<script src="/js/controllers/searchController.js?v3"></script>
-        	<script src="/js/controllers/modalController.js?v3"></script>
-        	<script src="/js/controllers/replayController.js?v3"></script>
+        <script src="{{cache-break:/main.js}}"></script>
 	</body>
 </html>
