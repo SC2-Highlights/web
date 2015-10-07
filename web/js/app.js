@@ -5,7 +5,7 @@ var App = angular.module(
 
 App.factory('configService', function() {
   return {
-      api_url  : 'http://api.sc2hl.com',
+      api_url  : 'http://localhost:3000',
       site_url : 'http://sc2hl.com'
   };
 });
@@ -34,6 +34,13 @@ App.config(
 				metaDescription: 'Show a random highlight',
 				width: '1380',
 			})
+			.when('/contest', {
+				templateUrl: 'views/contest.html',
+				controller: 'contestController',
+				metaTitle: 'SC2HL Hype Contest',
+				metaDescription: 'SC2HL Hype Contest',
+				width: '1380',
+			})		
 			.when('/highlight/:id', {
 				templateUrl: 'views/highlight.html',
 				controller: 'highlightController',

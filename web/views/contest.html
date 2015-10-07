@@ -1,0 +1,71 @@
+<div class="title col-xs-12 text-center">The SC2HL Hype Trailer Contest!</div>
+<div class="col-xs-12">
+	<div class="subsection first">
+		<p>Featuring a prizepool of $200.</p>
+		<p>Winner will get $100, Second $50, third/fouth $25!</p>
+		<p>The winners will also get some goodies from Blizzard and will be featured on the official WCS site!</p>
+	</div>
+
+	<div class="subsection">
+		<h2>How to enter</h2>
+		<ol>
+			<li>Create a video. Some usable graphics and tips <a href="#">here</a></li>
+			<li>Upload it to YouTube</li>
+			<li>Add SC2HL.com and a link to the contest in the description</li>
+			<li>Submit the video</li>
+		</ol>
+
+		<form name="contestform" ng-controller="contestController" class="form-inline text-center">
+			<fieldset ng-if="!success">
+				<div class="form-group">
+					<label class="sr-only">Username</label>
+					<input placeholder="Username" class="form-control" type="text" name="username" id="username" ng-model="data.username" required>
+				</div>
+
+				<div class="form-group">
+					<label class="sr-only">YouTube link</label>
+					<input placeholder="YouTube link" class="form-control" type="text" name="ytlink" id="ytlink" ng-model="data.ytlink" required>
+				</div>
+
+				<div class="form-group">
+					<label class="sr-only">Email</label>
+					<input placeholder="Email" class="form-control" type="email" name="email" id="email" ng-model="data.email" required>
+				</div>
+
+				<div class="form-group form-group-block">
+					<button ng-disabled="contestform.$invalid || lock" class="btn btn-default" ng-click="submitContest(data)">Submit</button>
+				</div>
+			</fieldset>
+
+			<div class="form-group">
+            <div ng-if="data">
+                <div ng-if="!success">
+                     <div class="alert alert-danger" role="alert"><strong>Error:</strong> {{data}}</div>
+                </div>
+
+                <div ng-if="success">
+                    <div class="alert alert-success" role="alert"><strong>Success:</strong> {{data}} <a ng-click="sendAnotherVideo()">Send another video</a></div>
+                </div>
+            </div>
+        </div>
+		</form>
+	</div>
+
+	<div class="subsection">
+		<h2>Entrees</h2>
+		<p>Entrees here</p>
+	</div>
+
+	<div class="subsection last">
+		<h3>Additional information & Rules</h3>
+
+		<ul>
+			<li>Submissions accepted until November 1.</li>
+			<li>Prizes will be paid out through Paypal.</li>
+			<li>You have to link the SC2HL youtube channel (<a href="http://youtube.com/SC2HL">http://youtube.com/SC2HL</a> and contest website (<a href="http://sc2hl.com/videocontest">http://sc2hl.com/videocontest</a>) in the video description.</li>
+			<li>Videos will be judged by @nice__username, @dtdsc & @onesybert</li>
+			<li>Obvious copies or offensive videos will be excluded from competition.</li>
+			<li>Videos have to be in English</li>
+		</ul>
+	</div>
+</div>

@@ -46,6 +46,7 @@ gulp.task('scripts', ['bower'], function() {
         'web/js/analyticsService.js',
         'web/js/controllers/homepageController.js',
         'web/js/controllers/highlightController.js',
+        'web/js/controllers/contestController.js',
         'web/js/controllers/searchController.js',
         'web/js/controllers/modalController.js',
         'web/js/controllers/replayController.js'
