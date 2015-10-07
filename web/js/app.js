@@ -5,7 +5,7 @@ var App = angular.module(
 
 App.factory('configService', function() {
   return {
-      api_url  : 'http://localhost:3000',
+      api_url  : 'http://api.sc2hl.com',
       site_url : 'http://sc2hl.com'
   };
 });
