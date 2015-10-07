@@ -7,6 +7,7 @@
 		<meta name="description" content="{{ metaDescription }}">
 		<meta name="viewport" content="width=device-width">
 		<meta property="og:image" content="http://sc2hl.com/images/logo_thumbnail.png" />
+		<meta name="google-site-verification" content="bPu74eO9s3PgV-I8vnCNoTy-GrCrJT-BYCwnaOKNVeU" />
 		<link rel="stylesheet" href="{{cache-break:/bower-main.css}}">
 		<link rel="stylesheet" href="{{cache-break:/main.css}}">
 		<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
@@ -29,16 +30,14 @@
 					</a>
 				</div>
 				<ul class="navigation list-group" ng-controller="userMenu">
-					<a ng-href="/" class="list-group-item nav-button">Home</a>
-					<a ng-href="/highlight" class="list-group-item nav-button">Highlights</a>
-					<a ng-href="/submitreplay" class="list-group-item nav-button">Submit Your Replay</a>
-                    <a ng-click="openSuggestForm()" class="list-group-item nav-button">Suggest Highlight</a>
+					<a ng-href="/" class="list-group-item nav-button" ng-class="getClass('/')"><span class="glyphicon glyphicon-home"></span> Home</a>
+					<a ng-href="/highlight" class="list-group-item nav-button" ng-class="getClass('/highlight')"><span class="glyphicon glyphicon-star"></span> Highlights</a>
+					<a ng-href="/random" class="list-group-item nav-button"><span class="glyphicon glyphicon-random"></span> Random Highlight</a>
+					<a ng-href="/contest" class="list-group-item nav-button" ng-class="getClass('/contest')"><span class="glyphicon glyphicon-asterisk"></span> Contest</a>
+					<a ng-href="/submitreplay" class="list-group-item nav-button" ng-class="getClass('/submitreplay')"><span class="glyphicon glyphicon-open-file"></span> Submit Your Replay</a>
+                    <a ng-click="openSuggestForm()" class="list-group-item nav-button"><span class="glyphicon glyphicon-thumbs-up"></span> Suggest Highlight</a>
 				</ul>
-				<img usemap="#image-map" class="img-responsive center-block" src="/images/lotv-preorder-ad.png" alt="Support SC2HL, preorder LOTV!">
-				<map name="image-map" id="image-map">
-					<area shape="rect" coords="140,104,237,135" alt="Amazon US" ng-href="http://amzn.to/1HihFom">
-       				<area shape="rect" coords="140,145,237,176" alt="Amazon UK" ng-href="http://amzn.to/1TUN8WS">
-				</map>
+				<a href="http://bit.ly/JORDwatches"><img class="img-responsive center-block" src="/images/jord-woodwatches.png" alt="JORD woodwatches"></a>
 			</div>
 			<div id="side-bar-remainder">
 			</div>

@@ -76,6 +76,14 @@ html {
 
   h3 {
     margin: 0 0 15px 10px;
+
+    span {
+      margin-right: 5px;
+
+      &.glyphicon-random {
+        margin-right: 12px;
+      }
+    }
   }
 
   .btn-homepage {
@@ -160,6 +168,15 @@ html {
       a {
         border-right: 0;
         border-left: 5px solid #fff;
+
+        span {
+          margin-right: 10px;
+        }
+
+        &.active-item {
+          background: whitesmoke;
+        }
+
         &:hover {
           color: $purp;
           cursor: pointer;
@@ -283,6 +300,10 @@ html {
   margin: 8px 0 0 0;
 }
 
+.form-group-block {
+  display: block !important;
+}
+
 .btn-block + .btn-social {
   margin-top: 8px;
   margin-bottom: 8px;
@@ -295,6 +316,17 @@ html {
 
 .modal-footer {
   margin: 0;
+}
+
+.subsection {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+  text-align: center;
+
+  &.last {
+    padding-top: 15px;
+    border: none;
+  }
 }
 
 /* collapsed styles */

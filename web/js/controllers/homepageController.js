@@ -1,24 +1,24 @@
-App.factory('HomepagePost',function($resource){
+App.factory('HomepagePost',function($resource, configService){
 	return $resource(
-		'http://api.sc2hl.com/blog/:id'
+		configService.api_url + '/blog/:id'
 	);
 });
 
-App.factory('RecentHighlight', function($resource) {
+App.factory('RecentHighlight', function($resource, configService) {
 	return $resource(
-		'http://api.sc2hl.com/blog/highlight/recent/:limit'
+		configService.api_url + '/blog/highlight/recent/:limit'
 	);
 });
 
-App.factory('TopHighlight', function($resource) {
+App.factory('TopHighlight', function($resource, configService) {
 	return $resource(
-		'http://api.sc2hl.com/blog/highlight/top/:limit'
+		configService.api_url + '/blog/highlight/top/:limit'
 	);
 });
 
-App.factory('RandomHighlight', function($resource) {
+App.factory('RandomHighlight', function($resource, configService) {
 	return $resource(
-		'http://api.sc2hl.com/blog/highlight/random/:limit'
+		configService.api_url + '/blog/highlight/random/:limit'
 	);
 });
 

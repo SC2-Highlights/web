@@ -3,6 +3,13 @@ var App = angular.module(
     ['ngRoute', 'ngResource', 'ui.bootstrap', 'angularMoment', 'angular-loading-bar', 'ngAnimate', 'ngSanitize', 'analytics', 'ngFileUpload']
 );
 
+App.factory('configService', function() {
+  return {
+      api_url  : 'http://localhost:3000',
+      site_url : 'http://sc2hl.com'
+  };
+});
+
 App.config(
 	['$routeProvider', '$locationProvider',  function($routeProvider, $locationProvider) {
 		$routeProvider
@@ -20,6 +27,20 @@ App.config(
 				metaDescription: 'A list of all the highlights on SC2HL',
 				width: '1380',
 			})
+			.when('/random', {
+				templateUrl: 'views/highlight.html',
+				controller: 'randomHighlightController',
+				metaTitle: 'Random highlight',
+				metaDescription: 'Show a random highlight',
+				width: '1380',
+			})
+			.when('/contest', {
+				templateUrl: 'views/contest.html',
+				controller: 'contestController',
+				metaTitle: 'SC2HL Hype Contest',
+				metaDescription: 'SC2HL Hype Contest',
+				width: '1380',
+			})		
 			.when('/highlight/:id', {
 				templateUrl: 'views/highlight.html',
 				controller: 'highlightController',
@@ -83,7 +104,7 @@ App.run(
 	}]
 );
 
-App.controller('userMenu', function($modal, $scope) {
+App.controller('userMenu', function($modal, $scope, $location) {
     $scope.openSuggestForm = function() {
         var modalInstance = $modal.open({
             templateUrl: 'views/modals/suggest.html',
@@ -91,6 +112,26 @@ App.controller('userMenu', function($modal, $scope) {
             size: 'md'
         });
     };
+
+    $scope.getClass = function(path) {
+    	if ($location.path().substr(0, path.length) == path) {
+    		if (path == '/' && $location.path() == '/') {
+    			return 'active-item';
+    		} 
+
+    		else if (path == '/') {
+    			return '';
+    		}
+
+    		else {
+    			return 'active-item';
+    		}
+    	} 
+
+    	else {
+    		return '';
+    	}
+    }
 });
 
 App.controller('footerMenu', function($modal, $scope) {
