@@ -4,7 +4,7 @@ App.factory('ContestService',function($resource, configService){
     );
 });
 
-App.controller('contestController', function($sce, $scope, $location, $rootScope, $route, ContestService, configService) {
+App.controller('contestController', function($sce, $scope, $location, $rootScope, $route, $modal, ContestService, configService) {
 
     $scope.openContestModal = function() {
         var modalInstance = $modal.open({
