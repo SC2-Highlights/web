@@ -6,6 +6,13 @@ App.factory('ContestService',function($resource, configService){
 
 App.controller('contestController', function($sce, $scope, $location, $rootScope, $route, ContestService, configService) {
 
+    $scope.openContestModal = function() {
+        var modalInstance = $modal.open({
+            templateUrl: 'views/modals/contest.html',
+            size: 'md'
+        });
+    };
+
     $scope.contest = ContestService.get(function() {
         $scope.submitContest = function(data) {
             $scope.contest.data = data;
