@@ -27,6 +27,12 @@ App.controller('modalSuggestForm', function($scope, $modalInstance, SuggestServi
     };
 });
 
+App.controller('modalContestModal', function($scope, $modalInstance, SuggestService) {
+    $scope.cancel = function () {
+        $modalInstance.dismiss('cancel');
+    };
+});
+
 App.controller('modalContactForm', function($scope, $modalInstance, ContactService) {
     $scope.contact = ContactService.get(function(){
         $scope.submitContact = function(data){

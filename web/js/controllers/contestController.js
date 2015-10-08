@@ -9,6 +9,7 @@ App.controller('contestController', function($sce, $scope, $location, $rootScope
     $scope.openContestModal = function() {
         var modalInstance = $modal.open({
             templateUrl: 'views/modals/contest.html',
+            controller: 'modalContestModal',
             size: 'md'
         });
     };
