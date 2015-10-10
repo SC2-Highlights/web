@@ -9,6 +9,9 @@
 	RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit/[0-9]|Twitterbot|redditbot)
 	RewriteRule submitreplay http://api.sc2hl.com/static/submitreplay [P]
 
+	RewriteCond %{HTTP_USER_AGENT} (facebookexternalhit/[0-9]|Twitterbot|redditbot)
+	RewriteRule contest http://api.sc2hl.com/static/contest [P]
+
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	RewriteCond %{REQUEST_URI} !index
