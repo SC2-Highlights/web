@@ -1,0 +1,67 @@
+<div class="col-xs-12">
+	<div class="subsection first">
+		<img src="images/wcs-hype-contest.png" class="img-responsive" style="margin-bottom: 20px;" alt="SC2HL WCS Hype Contest Information">
+
+		<p>WCS is over, Proleague has ended. All eyes are set on the last big finals of the year. The WCS Grand Finals. The 16 best players will duke it out November 1-9 in Anaheim, CA. Its time to create some hype, what better way than with a hype trailer. The contest is simple: Make a hype video for the WCS Grand finals. Lets get excited for the Final Heart of the Swarm tournament!</p>
+		<p>There will be <strong>$200 in prizes</strong> awarded!  1st place will win $100, Second $50 and third/fourth $25.</p>
+	</div>
+
+	<div class="subsection">
+		<h2>How to enter</h2>
+		
+		<p>
+			1. Create a video. Some usable graphics and tips <a ng-click="openContestModal()">here</a><br>
+			2. Upload it to YouTube<br>
+			3. Add SC2HL.com and a link to the contest in the description<br>
+			4. Submit the video
+		</p>
+
+		<form name="contestform" ng-controller="contestController" class="form-inline text-center">
+			<fieldset ng-if="!success">
+				<div class="form-group">
+					<label class="sr-only">Username</label>
+					<input placeholder="Username" class="form-control" type="text" name="username" id="username" ng-model="data.username" required>
+				</div>
+
+				<div class="form-group">
+					<label class="sr-only">YouTube link</label>
+					<input placeholder="YouTube link" class="form-control" type="text" name="ytlink" id="ytlink" ng-model="data.ytlink" required>
+				</div>
+
+				<div class="form-group">
+					<label class="sr-only">Email</label>
+					<input placeholder="Email" class="form-control" type="email" name="email" id="email" ng-model="data.email" required>
+				</div>
+
+				<div class="form-group form-group-block">
+					<button ng-disabled="contestform.$invalid || lock" class="btn btn-default" ng-click="submitContest(data)">Submit</button>
+				</div>
+			</fieldset>
+
+			<div class="form-group">
+            <div ng-if="data">
+                <div ng-if="!success">
+                     <div class="alert alert-danger" role="alert"><strong>Error:</strong> {{data}}</div>
+                </div>
+
+                <div ng-if="success">
+                    <div class="alert alert-success" role="alert"><strong>Success:</strong> {{data}} <a ng-click="sendAnotherVideo()">Send another video</a></div>
+                </div>
+            </div>
+        </div>
+		</form>
+	</div>
+
+	<div class="subsection last">
+		<h3>Additional information & Rules</h3>
+
+		<p>
+			Submissions accepted until October 29.<br>
+			Prizes will be paid out through Paypal.<br>
+			You have to link the SC2HL youtube channel (<a href="http://youtube.com/SC2HL">http://youtube.com/SC2HL</a> and contest website (<a href="http://sc2hl.com/contest">http://sc2hl.com/contest</a>) in the video description.<br>
+			Videos will be judged by @nice__username, @dtdsc & @onesybert<br>
+			Obvious copies or offensive videos will be excluded from competition.<br>
+			Videos have to be in English
+		</p>
+	</div>
+</div>

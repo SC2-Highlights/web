@@ -300,6 +300,10 @@ html {
   margin: 8px 0 0 0;
 }
 
+.form-group-block {
+  display: block !important;
+}
+
 .btn-block + .btn-social {
   margin-top: 8px;
   margin-bottom: 8px;
@@ -312,6 +316,21 @@ html {
 
 .modal-footer {
   margin: 0;
+}
+
+.subsection {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+  text-align: center;
+
+  &.last {
+    padding-top: 15px;
+    border: none;
+  }
+}
+
+.contest-entrees {
+  margin-top: 15px;
 }
 
 /* collapsed styles */
