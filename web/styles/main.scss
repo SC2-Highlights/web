@@ -212,6 +212,28 @@ html {
           background: whitesmoke;
         }
       }
+
+      .chairs4gaming {
+        img {
+          width: 16px;
+          height: auto;
+          margin-right: 8px;
+        }
+
+        background: #0b9444;
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: bold;
+        border: 1px solid darken(#0b9444, 5%);
+        border-left: 5px solid #0b9444;
+        
+        &:hover {
+          background: darken(#0b9444, 7%);
+          border: 1px solid darken(#0b9444, 10%);
+          border-left: 5px solid darken(#0b9444, 15%);
+          color: #fff;
+        }
+      }
     }
     .side-bar-image {
       margin-top: 10px;
