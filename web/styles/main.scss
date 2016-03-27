@@ -4,8 +4,8 @@ $footer-height: 100px;
 $side-bar-width: 280px;
 $border: 1px solid #ccc;
 $top-bar-height: 50px;
-$link-color: #428bca;
 $purp: #8C489F;
+$link-color: $purp;
 $standard-padding: 10px;
 
 /* General Rules */
@@ -36,11 +36,26 @@ html {
   .pointer {
     cursor: pointer;
   }
-  a:hover {
+  a, a:visited {
     color: $purp;
-    text-decoration: none;
-    cursor: pointer;
+
+    &:hover {
+      color: darken($purp, 10%);
+      text-decoration: none;
+      cursor: pointer;
+    }
   }
+
+  .btn-primary {
+    background: $purp;
+    border-color: darken($purp, 10%);
+
+    &:hover {
+      background: darken($purp, 10%);
+      border-color: darken($purp, 20%);
+    }
+  }
+
   .link:hover {
     cursor: pointer;
     border-color: $purp;
@@ -89,6 +104,10 @@ html {
   .btn-homepage {
     margin-bottom: 15px;
   }
+
+  .home-thumbnail {
+    width: 100%;
+  }
 }
 
 /* Display whilst rendering */
@@ -97,18 +116,18 @@ html {
 }
 
 //.ng-enter{
-//	transition: 0.5s; opacity: 0;
+//  transition: 0.5s; opacity: 0;
 //}
 //.ng-enter-active{
-//	opacity: 1;
+//  opacity: 1;
 //}
 //
 //.ng-leave{
-//	transition: 0.25s;
-//	opacity: 1;
+//  transition: 0.25s;
+//  opacity: 1;
 //}
 //.ng-leave-active{
-//	opacity: 0;
+//  opacity: 0;
 //}
 
 /* Consistent divs */
@@ -164,10 +183,19 @@ html {
     .search {
       margin: 10px 10px 10px 10px;
     }
+    .list-group-item:first-child, .list-group-item:last-child {
+      border-radius: 0px;
+    }
+
     .navigation {
       a {
+        color: #555;
         border-right: 0;
         border-left: 5px solid #fff;
+
+        &.active-item {
+          border-left: 5px solid whitesmoke;
+        }
 
         span {
           margin-right: 10px;
@@ -222,6 +250,12 @@ html {
         .pagination-sm {
           margin:0;
         }
+
+        .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+          background-color: $link-color;
+          border-color: $link-color;
+        }
+
         .filter {
           font-size:17px;
         }
@@ -273,7 +307,7 @@ html {
   thead {
     th {
       &:hover {
-        color: $purp;
+        color: darken($link-color, 10%);
       }
       color: $link-color;
       cursor: pointer;
