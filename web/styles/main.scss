@@ -105,10 +105,26 @@ html {
     margin-bottom: 15px;
   }
 
-  .home-thumbnail {
-    width: 100%;
+}
+
+.twitter-timeline {
+  .tweet {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+    display: block;
+    color: #333;
+
+    &:hover {
+      background: $purp;
+      color: #fff;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
   }
 }
+
 
 /* Display whilst rendering */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
@@ -312,6 +328,10 @@ html {
     font-size: 11px;
   }
 
+  .home-thumbnail {
+    width: 100%;
+  }
+
   &:hover {
     border-color: $purp;
     transition: all 0.2s ease-in;
@@ -320,6 +340,11 @@ html {
       background: $purp;
       color: #fff;
       transition: all 0.2s ease-in;
+    }
+
+    .home-thumbnail {
+      transition: all 0.2s ease-in;
+      box-shadow: inset 0 0 0 1000px rgba(255,255,255,.2);
     }
   }
 }
