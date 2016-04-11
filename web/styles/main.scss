@@ -328,6 +328,14 @@ html {
   }
 }
 
+.col-md-6 .panel {
+  margin-top: 20px;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .highlight-link-box {
   .panel-body {
     padding-top: 7px;
