@@ -129,6 +129,10 @@ html {
   max-width: 100%;
 }
 
+.nav-button.sponsor {
+  padding-left: 5px !important;
+}
+
 /* Display whilst rendering */
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
