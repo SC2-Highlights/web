@@ -76,8 +76,8 @@ App.config(
 			})
       .when('/divisionzero', {
         templateUrl: '/views/divisionzero.html',
-        metaTitle: 'Chairs4Gaming',
-        metaDescription: 'Chairs4Gaming',
+        metaTitle: 'Division Zero',
+        metaDescription: 'Division Zero',
         width:'980'
       })
 			.when('/404', {
