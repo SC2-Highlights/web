@@ -1,9 +1,7 @@
 box: wercker/nodejs
 build:
     steps:
-        - script:
-            name: install node packages
-            code: npm install
+        - npm-install
         - script:
             name: run gulp
             code: node_modules/.bin/gulp
