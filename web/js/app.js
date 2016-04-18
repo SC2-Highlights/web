@@ -34,13 +34,6 @@ App.config(
 				metaDescription: 'Show a random highlight',
 				width: '1380',
 			})
-			.when('/contest', {
-				templateUrl: 'views/contest.html',
-				controller: 'contestController',
-				metaTitle: 'SC2HL Hype Contest',
-				metaDescription: 'SC2HL Hype Contest',
-				width: '1380',
-			})		
 			.when('/highlight/:id', {
 				templateUrl: 'views/highlight.html',
 				controller: 'highlightController',
@@ -75,6 +68,18 @@ App.config(
 				metaDescription: 'SC2HL\'s blog post page',
 				width:'980'
 			})
+			.when('/chairs4gaming', {
+				templateUrl: '/views/chairs4gaming.html',
+				metaTitle: 'Chairs4Gaming',
+				metaDescription: 'Chairs4Gaming',
+				width:'980'
+			})
+      .when('/divisionzero', {
+        templateUrl: '/views/divisionzero.html',
+        metaTitle: 'Chairs4Gaming',
+        metaDescription: 'Chairs4Gaming',
+        width:'980'
+      })
 			.when('/404', {
 				templateUrl: '/views/404.html',
 				metaTitle: '404',
