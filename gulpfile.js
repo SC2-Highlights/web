@@ -9,8 +9,11 @@ var cachebreaker = require('gulp-cache-breaker');
 var uglify = require('gulp-uglify');
 var bower = require('gulp-bower');
 var ngAnnotate = require('gulp-ng-annotate');
+var connect = require('gulp-connect');
 
-gulp.task('default', ['bower','images', 'scripts', 'html', 'styles', 'htaccess']);
+gulp.task('default', ['build']);
+
+gulp.task('build', ['bower','images', 'scripts', 'html', 'styles', 'htaccess']);
 
 gulp.task('bower', function() {
     return bower('./bower_components');
@@ -97,7 +100,15 @@ gulp.task('htaccess', function() {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('watch', function() {
+gulp.task('serve', ['watch'], function() {
+    connect.server({
+        root: 'dist',
+        livereload: true,
+        fallback: 'dist/index.html'
+    });
+});
+
+gulp.task('watch', ['build'], function() {
     gulp.watch('web/.htaccess', ['htaccess']);
     gulp.watch('web/**/*.html', ['html']);
     gulp.watch('web/styles/*.scss', ['styles']);
