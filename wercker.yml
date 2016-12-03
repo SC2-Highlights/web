@@ -1,25 +1,8 @@
-box: wercker/nodejs
+box: node
 build:
     steps:
         - npm-install
         - script:
             name: run gulp
             code: node_modules/.bin/gulp
-deploy:
-    steps:
-        - s3sync:
-            source-dir: web/
-            delete-removed: true
-            bucket-url: $AWS_BUCKET_URL
-            key-id: $AWS_ACCESS_KEY_ID
-            key-secret: $AWS_SECRET_ACCESS_KEY
-        - add-to-known_hosts:
-            hostname: sc2hl.com
-        - add-ssh-key:
-            keyname: KEYNAME
-        - script:
-            name: install rsync
-            code: sudo apt-get install rsync
-        - script:
-            name: rsync files
-            code: rsync --delete -r dist/ wercker@sc2hl.com:/var/www/sc2hl/$WERCKER_GIT_BRANCH
+
