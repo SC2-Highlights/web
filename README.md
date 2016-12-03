@@ -5,7 +5,7 @@ The SC2HL front end angular project
 ## Installation
 
 Install the node packages
-`npm install`
+`yarn install`
 
 Run gulp to build
 `gulp`

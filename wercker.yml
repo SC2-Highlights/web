@@ -1,8 +1,27 @@
-box: node
+box: node:6
 build:
-    steps:
-        - npm-install
-        - script:
-            name: run gulp
-            code: node_modules/.bin/gulp
+  steps:
+    - script:
+      name: install yarn
+      code: |
+        npm install -g yarn
 
+    - script:
+      name: set yarn cache
+      code: |
+        export YARN_CACHE=$WERCKER_CACHE_DIR/yarn
+
+    - script:
+      name: install dependencies
+      code: |
+        HOME=$YARN_CACHE yarn
+
+    - script:
+      name: build
+      code: |
+        npm run build
+
+    - script:
+      name: cleanup dev dependencies
+      code: |
+        HOME=$YARN_CACHE yarn --prod
