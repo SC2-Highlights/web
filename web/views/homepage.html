@@ -1,63 +1,52 @@
 <div class="col-md-8">
-	<h3><span class="glyphicon glyphicon-fire"></span> Most recent Highlights</h3>
-	<div ng-repeat="highlight in recentHighlights" class="col-lg-4">
-		<div ng-click="goToLink('/highlight/' + highlight.highlight_id)" class="highlight-link-box panel panel-default pointer">
-			<img class="img-responsive home-thumbnail" ng-src="{{ 'http://img.youtube.com/vi/' + highlight.yt_url  + '/mqdefault.jpg' || 'images/blog-post-default.jpg' }}">
-			<div class="panel-heading float-clearfix">
-				<strong>{{ highlight.title | limitTo:30 }} {{highlight.title.length < 30 ? '' : '..'}}</strong>
-			</div>
-
-			<div class="panel-body">
-				<span class="glyphicon glyphicon-time"></span> <span am-time-ago="highlight.date_added"></span> <span class="pull-right"><rating ng-model="highlight.rating" max="5" readonly="true"></rating></span>
-			</div>
-			<div class="fadeTop panel-body max-height" ng-if="highlight.preview" ng-bind-html="skipValidation(highlight.preview)"></div>
-			<div class="fadeBottom"></div>
-		</div>
-	</div>
-
-	<div class="col-md-12"><a class="btn btn-primary btn-homepage" ng-click="goToLink('/highlight/')">Show All Highlights</a></div>
-
-	<h3><span class="glyphicon glyphicon-star"></span> Top rated Highlights</h3>
-
-	<div ng-repeat="highlight in topHighlights" class="col-lg-4">
-		<div ng-click="goToLink('/highlight/' + highlight.highlight_id)" class="highlight-link-box panel panel-default pointer">
-			<img class="img-responsive home-thumbnail" ng-src="{{ 'http://img.youtube.com/vi/' + highlight.yt_url  + '/mqdefault.jpg' || 'images/blog-post-default.jpg' }}">
-			<div class="panel-heading float-clearfix">
-				<strong>{{ highlight.title | limitTo:30 }} {{highlight.title.length < 30 ? '' : '..'}}</strong>
-			</div>
-
-			<div class="panel-body">
-				<span class="glyphicon glyphicon-time"></span> <span am-time-ago="highlight.date_added"></span> <span class="pull-right"><rating ng-model="highlight.rating" max="5" readonly="true"></rating></span>
-			</div>
-			<div class="fadeTop panel-body max-height" ng-if="highlight.preview" ng-bind-html="skipValidation(highlight.preview)"></div>
-			<div class="fadeBottom"></div>
-		</div>
-	</div>
-
-	<h3><span class="glyphicon glyphicon-random"></span> Random Highlights</h3>
-
-	<div ng-repeat="highlight in randomHighlights" class="col-lg-4">
-		<div ng-click="goToLink('/highlight/' + highlight.highlight_id)" class="highlight-link-box panel panel-default pointer">
-			<img class="img-responsive home-thumbnail" ng-src="{{ 'http://img.youtube.com/vi/' + highlight.yt_url  + '/mqdefault.jpg' || 'images/blog-post-default.jpg' }}">
-			<div class="panel-heading float-clearfix">
-				<strong>{{ highlight.title | limitTo:30 }} {{highlight.title.length < 30 ? '' : '..'}}</strong>
-			</div>
-
-			<div class="panel-body">
-				<span class="glyphicon glyphicon-time"></span> <span am-time-ago="highlight.date_added"></span> <span class="pull-right"><rating ng-model="highlight.rating" max="5" readonly="true"></rating></span>
-			</div>
-			<div class="fadeTop panel-body max-height" ng-if="highlight.preview" ng-bind-html="skipValidation(highlight.preview)"></div>
-			<div class="fadeBottom"></div>
-		</div>
-	</div>
-
+    <h3><span class="glyphicon glyphicon-fire"></span> Most recent Highlights</h3>
+    <div ng-repeat="highlight in recentHighlights" class="col-lg-4">
+        <div ng-click="goToLink('/highlight/' + highlight.highlight_id)" class="highlight-link-box panel panel-default pointer">
+            <img class="img-responsive home-thumbnail" ng-src="{{ 'http://img.youtube.com/vi/' + highlight.yt_url  + '/mqdefault.jpg' || 'images/blog-post-default.jpg' }}">
+            <div class="panel-heading float-clearfix">
+                <strong>{{ highlight.title | limitTo:30 }} {{highlight.title.length < 30 ? '' : '..'}}</strong>
+            </div>
+            <div class="panel-body">
+                <span class="glyphicon glyphicon-time"></span> <span am-time-ago="highlight.date_added"></span> <span class="pull-right"><rating ng-model="highlight.rating" max="5" readonly="true"></rating></span>
+            </div>
+            <div class="fadeTop panel-body max-height" ng-if="highlight.preview" ng-bind-html="skipValidation(highlight.preview)"></div>
+            <div class="fadeBottom"></div>
+        </div>
+    </div>
+    <div class="col-md-12"><a class="btn btn-primary btn-homepage" ng-click="goToLink('/highlight/')">Show All Highlights</a></div>
+    <h3><span class="glyphicon glyphicon-star"></span> Top rated Highlights</h3>
+    <div ng-repeat="highlight in topHighlights" class="col-lg-4">
+        <div ng-click="goToLink('/highlight/' + highlight.highlight_id)" class="highlight-link-box panel panel-default pointer">
+            <img class="img-responsive home-thumbnail" ng-src="{{ 'http://img.youtube.com/vi/' + highlight.yt_url  + '/mqdefault.jpg' || 'images/blog-post-default.jpg' }}">
+            <div class="panel-heading float-clearfix">
+                <strong>{{ highlight.title | limitTo:30 }} {{highlight.title.length < 30 ? '' : '..'}}</strong>
+            </div>
+            <div class="panel-body">
+                <span class="glyphicon glyphicon-time"></span> <span am-time-ago="highlight.date_added"></span> <span class="pull-right"><rating ng-model="highlight.rating" max="5" readonly="true"></rating></span>
+            </div>
+            <div class="fadeTop panel-body max-height" ng-if="highlight.preview" ng-bind-html="skipValidation(highlight.preview)"></div>
+            <div class="fadeBottom"></div>
+        </div>
+    </div>
+    <h3><span class="glyphicon glyphicon-random"></span> Random Highlights</h3>
+    <div ng-repeat="highlight in randomHighlights" class="col-lg-4">
+        <div ng-click="goToLink('/highlight/' + highlight.highlight_id)" class="highlight-link-box panel panel-default pointer">
+            <img class="img-responsive home-thumbnail" ng-src="{{ 'http://img.youtube.com/vi/' + highlight.yt_url  + '/mqdefault.jpg' || 'images/blog-post-default.jpg' }}">
+            <div class="panel-heading float-clearfix">
+                <strong>{{ highlight.title | limitTo:30 }} {{highlight.title.length < 30 ? '' : '..'}}</strong>
+            </div>
+            <div class="panel-body">
+                <span class="glyphicon glyphicon-time"></span> <span am-time-ago="highlight.date_added"></span> <span class="pull-right"><rating ng-model="highlight.rating" max="5" readonly="true"></rating></span>
+            </div>
+            <div class="fadeTop panel-body max-height" ng-if="highlight.preview" ng-bind-html="skipValidation(highlight.preview)"></div>
+            <div class="fadeBottom"></div>
+        </div>
+    </div>
 </div>
-
 <div class="col-md-4">
-	<h3>Follow us <a href="https://twitter.com/SC2HL">@SC2HL</a></h3>
-
-	<div class="twitter-timeline">
-		<a target="_blank" href="https://twitter.com/SC2HL/status/{{ tweet.id_str }}" class="tweet" ng-repeat="tweet in twitterFeed">
+    <h3>Follow us <a href="https://twitter.com/SC2HL">@SC2HL</a></h3>
+    <div class="twitter-timeline">
+        <a target="_blank" href="https://twitter.com/SC2HL/status/{{ tweet.id_str }}" class="tweet" ng-repeat="tweet in twitterFeed">
 			{{ tweet.text }}
 		</div>
 	</div>

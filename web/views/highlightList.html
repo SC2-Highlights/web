@@ -1,31 +1,31 @@
 <div class="col-sm-12 nopadding heading">
-    <div class="col-sm-8">
-        <input class="col-sm-12 filter" type="text" ng-model="search" ng-change="filterHighlights()" placeholder="Filter by title, event name, player names..."/>
-    </div>
-    <div class="col-sm-4">
-        <pagination total-items="totalItems" ng-model="currentPage" items-per-page="itemsPerPage" max-size="maxSize" ng-change="pageChanged()" class="pagination-sm pull-right" boundary-links="true" num-pages="numPages" direction-links="false" first-text="&laquo;" last-text="&raquo;"></pagination>
-    </div>
+		<div class="col-sm-8">
+				<input class="col-sm-12 filter" type="text" ng-model="search" ng-change="filterHighlights()" placeholder="Filter by title, event name, player names..." />
+		</div>
+		<div class="col-sm-4">
+				<pagination total-items="totalItems" ng-model="currentPage" items-per-page="itemsPerPage" max-size="maxSize" ng-change="pageChanged()" class="pagination-sm pull-right" boundary-links="true" num-pages="numPages" direction-links="false" first-text="&laquo;" last-text="&raquo;"></pagination>
+		</div>
 </div>
 <div class="col-xs-12">
-	<table class="table">
-		<thead>
-			<tr>
-				<th ng-click="changeSorting('rating')" class="pointer" width="10%">Rating</th>
-				<th ng-click="changeSorting('title')" class="pointer" width="25%">Title</th>
-				<th ng-click="changeSorting('dateAdded')" class="pointer" width="15%">Date</th>
-				<th class="dissapear pointer" width="25%">Event</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="highlight in filteredHighlights | orderBy:sort:direction | limitTo: offset+itemsPerPage | limitTo: -itemsPerPage" ng-click="showHighlight(highlight.highlight_id, $event)" class="row-hover">
-				<td>{{ highlight.rating }}</td>
-				<td>{{ highlight.title }}</td>
-				<td>{{ highlight.date_added | date:'yyyy-MM-dd' }}</td>
-				<td class="dissapear">{{ highlight.event_name }}</td>
-			</tr>
-		</tbody>
-	</table>
+		<table class="table">
+				<thead>
+						<tr>
+								<th ng-click="changeSorting('rating')" class="pointer" width="10%">Rating</th>
+								<th ng-click="changeSorting('title')" class="pointer" width="25%">Title</th>
+								<th ng-click="changeSorting('dateAdded')" class="pointer" width="15%">Date</th>
+								<th class="dissapear pointer" width="25%">Event</th>
+						</tr>
+				</thead>
+				<tbody>
+						<tr ng-repeat="highlight in filteredHighlights | orderBy:sort:direction | limitTo: offset+itemsPerPage | limitTo: -itemsPerPage" ng-click="showHighlight(highlight.highlight_id, $event)" class="row-hover">
+								<td>{{ highlight.rating }}</td>
+								<td>{{ highlight.title }}</td>
+								<td>{{ highlight.date_added | date:'yyyy-MM-dd' }}</td>
+								<td class="dissapear">{{ highlight.event_name }}</td>
+						</tr>
+				</tbody>
+		</table>
 </div>
 <div class="col-xs-12">
-	<pagination total-items="totalItems" ng-model="currentPage" items-per-page="itemsPerPage" max-size="maxSize" ng-change="pageChanged()" class="pagination-sm pull-right" boundary-links="true" num-pages="numPages" direction-links="false" first-text="&laquo;" last-text="&raquo;"></pagination>
+		<pagination total-items="totalItems" ng-model="currentPage" items-per-page="itemsPerPage" max-size="maxSize" ng-change="pageChanged()" class="pagination-sm pull-right" boundary-links="true" num-pages="numPages" direction-links="false" first-text="&laquo;" last-text="&raquo;"></pagination>
 </div>
