@@ -1,63 +1,66 @@
 <!doctype html>
 <html ng-app="sc2hl">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title ng-bind="metaTitle"></title>
-		<meta name="description" content="{{ metaDescription }}">
-		<meta name="viewport" content="width=device-width">
-		<meta property="og:image" content="http://sc2hl.com/images/logo_thumbnail.png" />
-		<meta name="google-site-verification" content="rTGlhE7rRtnroS9IFpMT55lGfzLcIdEeZXsEH3BXG44" />
-		<link rel="stylesheet" href="{{cache-break:/bower-main.css}}">
-		<link rel="stylesheet" href="{{cache-break:/main.css}}">
-		<link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-		<base href="/" />
-	</head>
-	<body ng-cloak class="ng-cloak">
-		<div id="wrapper">
-			<div id="top-bar">
-				<button type="button" class="btn btn-default btn-lg side-bar-button">
-					<span class="glyphicon glyphicon-align-justify"></span>
-				</button>
-				<div class="logo pull-right">
-					<img src="/images/small_logo.png">
-				</div>
-			</div>
-			<div id="side-bar">
-				<div class="logo dissapear">
-					<a ng-href="/">
-						<img ng-src="/images/logo.png">
-					</a>
-				</div>
-				<ul class="navigation list-group" ng-controller="userMenu">
-					<a ng-href="/" class="list-group-item nav-button" ng-class="getClass('/')"><span class="glyphicon glyphicon-home"></span> Home</a>
-					<a ng-href="/highlight" class="list-group-item nav-button" ng-class="getClass('/highlight')"><span class="glyphicon glyphicon-star"></span> Highlights</a>
-					<a ng-href="/random" class="list-group-item nav-button"><span class="glyphicon glyphicon-random"></span> Random Highlight</a>
-					<a ng-href="/submitreplay" class="list-group-item nav-button" ng-class="getClass('/submitreplay')"><span class="glyphicon glyphicon-open-file"></span> Submit Your Replay</a>
-                    <a ng-click="openSuggestForm()" class="list-group-item nav-button"><span class="glyphicon glyphicon-thumbs-up"></span> Suggest Highlight</a>
-          <a ng-href="/divisionzero" class="list-group-item nav-button sponsor"><img src="images/division-zero-logo-big.png" alt="Division Zero"></a>
-          <a ng-href="/chairs4gaming" class="list-group-item nav-button sponsor"><img src="images/chairs-for-gaming.png" alt="Chairs4Gaming"></a>
-				</ul>
-			</div>
-			<div id="side-bar-remainder">
-			</div>
-			<div id="contentWrapper">
-				<div id="content">
-					<div id="page" style="max-width:{{ pageWidth }}px;">
-						<div ng-view=""></div>
-					</div>
-				</div> 
-				<div id="footer" ng-controller="footerMenu">
-                    <p>
-                        <a ng-href="https://www.facebook.com/SC2HL" target="_blank"><img src="/images/social/facebook.png" width="35px"></a>
-                        <a ng-href="https://twitter.com/SC2HL" target="_blank"><img src="/images/social/twitter.png" width="35px"></a>
-                        <a ng-href="https://www.youtube.com/user/DTDstarcraft" target="_blank"><img src="/images/social/youtube.png" width="35px"></a>
-                    </p>
-                    <a ng-click="openContactForm()">Contact Us</a> | <a ng-href="/aboutus">About Us</a>
-                    <p class="nomargin">Copyright © 2014 - SC2HL.com</p>
-				</div>
-			</div>
-		</div>
-        <script src="{{cache-break:/main.js}}"></script>
-	</body>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title ng-bind="metaTitle"></title>
+    <meta name="description" content="{{ metaDescription }}">
+    <meta name="viewport" content="width=device-width">
+    <meta property="og:image" content="http://sc2hl.com/images/logo_thumbnail.png" />
+    <meta name="google-site-verification" content="rTGlhE7rRtnroS9IFpMT55lGfzLcIdEeZXsEH3BXG44" />
+    <link rel="stylesheet" href="{{cache-break:/bower-main.css}}">
+    <link rel="stylesheet" href="{{cache-break:/main.css}}">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+    <base href="/" />
+</head>
+
+<body ng-cloak class="ng-cloak">
+    <div id="wrapper">
+        <div id="top-bar">
+            <button type="button" class="btn btn-default btn-lg side-bar-button">
+                <span class="glyphicon glyphicon-align-justify"></span>
+            </button>
+            <div class="logo pull-right">
+                <img src="/images/small_logo.png">
+            </div>
+        </div>
+        <div id="side-bar">
+            <div class="logo dissapear">
+                <a ng-href="/">
+                    <img ng-src="/images/logo.png">
+                </a>
+            </div>
+            <ul class="navigation list-group" ng-controller="userMenu">
+                <a ng-href="/" class="list-group-item nav-button" ng-class="getClass('/')"><span class="glyphicon glyphicon-home"></span> Home</a>
+                <a ng-href="/highlight" class="list-group-item nav-button" ng-class="getClass('/highlight')"><span class="glyphicon glyphicon-star"></span> Highlights</a>
+                <a ng-href="/random" class="list-group-item nav-button"><span class="glyphicon glyphicon-random"></span> Random Highlight</a>
+                <a ng-href="/submitreplay" class="list-group-item nav-button" ng-class="getClass('/submitreplay')"><span class="glyphicon glyphicon-open-file"></span> Submit Your Replay</a>
+                <a ng-click="openSuggestForm()" class="list-group-item nav-button"><span class="glyphicon glyphicon-thumbs-up"></span> Suggest Highlight</a>
+                <a ng-href="/divisionzero" class="list-group-item nav-button sponsor"><img src="images/division-zero-logo-big.png" alt="Division Zero"></a>
+                <a ng-href="/chairs4gaming" class="list-group-item nav-button sponsor"><img src="images/chairs-for-gaming.png" alt="Chairs4Gaming"></a>
+            </ul>
+        </div>
+        <div id="side-bar-remainder">
+        </div>
+        <div id="contentWrapper">
+            <div id="content">
+                <div id="page" style="max-width:{{ pageWidth }}px;">
+                    <div ng-view=""></div>
+                </div>
+            </div>
+            <div id="footer" ng-controller="footerMenu">
+                <p>
+                    <a ng-href="https://www.facebook.com/SC2HL" target="_blank"><img src="/images/social/facebook.png" width="35px"></a>
+                    <a ng-href="https://twitter.com/SC2HL" target="_blank"><img src="/images/social/twitter.png" width="35px"></a>
+                    <a ng-href="https://www.youtube.com/user/DTDstarcraft" target="_blank"><img src="/images/social/youtube.png" width="35px"></a>
+                </p>
+                <a ng-click="openContactForm()">Contact Us</a> | <a ng-href="/aboutus">About Us</a>
+                <p class="nomargin">Copyright © 2014 - SC2HL.com</p>
+            </div>
+        </div>
+    </div>
+    <script src="{{cache-break:/main.js}}"></script>
+</body>
+
 </html>

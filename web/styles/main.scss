@@ -1,5 +1,4 @@
 @import "roboto";
-
 $footer-height: 100px;
 $side-bar-width: 280px;
 $border: 1px solid #ccc;
@@ -9,6 +8,7 @@ $link-color: $purp;
 $standard-padding: 10px;
 
 /* General Rules */
+
 html {
   overflow-y: scroll;
   height: 100%;
@@ -30,32 +30,32 @@ html {
   .nopadding-left {
     padding-left: 0;
   }
-  .btn, input, li, .modal-content {
+  .btn,
+  input,
+  li,
+  .modal-content {
     border-radius: 0 !important;
   }
   .pointer {
     cursor: pointer;
   }
-  a, a:visited {
+  a,
+  a:visited {
     color: $purp;
-
     &:hover {
       color: darken($purp, 10%);
       text-decoration: none;
       cursor: pointer;
     }
   }
-
   .btn-primary {
     background: $purp;
     border-color: darken($purp, 10%);
-
     &:hover {
       background: darken($purp, 10%);
       border-color: darken($purp, 20%);
     }
   }
-
   .link:hover {
     cursor: pointer;
     border-color: $purp;
@@ -88,23 +88,18 @@ html {
   .space-below {
     margin-bottom: 60px;
   }
-
   h3 {
     margin: 0 0 15px 10px;
-
     span {
       margin-right: 5px;
-
       &.glyphicon-random {
         margin-right: 12px;
       }
     }
   }
-
   .btn-homepage {
     margin-bottom: 15px;
   }
-
 }
 
 .twitter-timeline {
@@ -113,12 +108,10 @@ html {
     padding: 10px;
     display: block;
     color: #333;
-
     &:hover {
       background: $purp;
       color: #fff;
     }
-
     &:last-child {
       border-bottom: none;
     }
@@ -133,13 +126,21 @@ html {
   padding-left: 5px !important;
 }
 
+
 /* Display whilst rendering */
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
   display: none !important;
 }
 
 
 /* Consistent divs */
+
 #wrapper {
   height: 100%;
   #top-bar {
@@ -192,28 +193,24 @@ html {
     .search {
       margin: 10px 10px 10px 10px;
     }
-    .list-group-item:first-child, .list-group-item:last-child {
+    .list-group-item:first-child,
+    .list-group-item:last-child {
       border-radius: 0px;
     }
-
     .navigation {
       a {
         color: #555;
         border-right: 0;
         border-left: 5px solid #fff;
-
         &.active-item {
           border-left: 5px solid whitesmoke;
         }
-
         span {
           margin-right: 10px;
         }
-
         &.active-item {
           background: whitesmoke;
         }
-
         &:hover {
           color: $purp;
           cursor: pointer;
@@ -221,21 +218,18 @@ html {
           background: whitesmoke;
         }
       }
-
       .chairs4gaming {
         img {
           width: 16px;
           height: auto;
           margin-right: 8px;
         }
-
         background: #0b9444;
         color: #fff;
         text-transform: uppercase;
         font-weight: bold;
         border: 1px solid darken(#0b9444, 5%);
         border-left: 5px solid #0b9444;
-        
         &:hover {
           background: darken(#0b9444, 7%);
           border: 1px solid darken(#0b9444, 10%);
@@ -279,16 +273,19 @@ html {
           margin-bottom: 15px;
         }
         .pagination-sm {
-          margin:0;
+          margin: 0;
         }
-
-        .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+        .pagination>.active>a,
+        .pagination>.active>a:focus,
+        .pagination>.active>a:hover,
+        .pagination>.active>span,
+        .pagination>.active>span:focus,
+        .pagination>.active>span:hover {
           background-color: $link-color;
           border-color: $link-color;
         }
-
         .filter {
-          font-size:17px;
+          font-size: 17px;
         }
       }
     }
@@ -303,7 +300,9 @@ html {
   }
 }
 
+
 /* Panel Styles */
+
 .panel {
   border-radius: 0px;
   .panel-body {
@@ -316,7 +315,6 @@ html {
 
 .col-md-6 .panel {
   margin-top: 20px;
-
   p:last-child {
     margin-bottom: 0;
   }
@@ -328,29 +326,27 @@ html {
     padding-bottom: 7px;
     font-size: 11px;
   }
-
   .home-thumbnail {
     width: 100%;
   }
-
   &:hover {
     border-color: $purp;
     transition: all 0.2s ease-in;
-
     .panel-heading {
       background: $purp;
       color: #fff;
       transition: all 0.2s ease-in;
     }
-
     .home-thumbnail {
       transition: all 0.2s ease-in;
-      box-shadow: inset 0 0 0 1000px rgba(255,255,255,.2);
+      box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, .2);
     }
   }
 }
 
+
 /* Table Styles */
+
 .table {
   thead {
     th {
@@ -391,7 +387,9 @@ html {
   margin-bottom: 8px;
 }
 
+
 /* Modal Styles */
+
 .modal-sm {
   width: 350px;
 }
@@ -404,7 +402,6 @@ html {
   border-bottom: 1px solid #ccc;
   padding-bottom: 15px;
   text-align: center;
-
   &.last {
     padding-top: 15px;
     border: none;
@@ -415,7 +412,9 @@ html {
   margin-top: 10px;
 }
 
+
 /* collapsed styles */
+
 @media screen and (max-width: 960px) {
   #wrapper {
     #top-bar {
@@ -467,7 +466,54 @@ html {
   z-index: 1001;
 }
 
-.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
   padding-left: $standard-padding;
   padding-right: $standard-padding;
 }
