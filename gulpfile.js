@@ -13,7 +13,7 @@ var connect = require('gulp-connect');
 
 gulp.task('default', ['build']);
 
-gulp.task('build', ['bower','images', 'scripts', 'html', 'styles', 'htaccess']);
+gulp.task('build', ['bower','images', 'scripts', 'html', 'styles']);
 
 gulp.task('bower', function() {
     return bower('./bower_components');
@@ -95,11 +95,6 @@ gulp.task('html', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('htaccess', function() {
-    return gulp.src('web/.htaccess')
-        .pipe(gulp.dest('dist'));
-});
-
 gulp.task('serve', ['watch'], function() {
     connect.server({
         root: 'dist',
@@ -109,7 +104,6 @@ gulp.task('serve', ['watch'], function() {
 });
 
 gulp.task('watch', ['build'], function() {
-    gulp.watch('web/.htaccess', ['htaccess']);
     gulp.watch('web/**/*.html', ['html']);
     gulp.watch('web/styles/*.scss', ['styles']);
     gulp.watch(['web/js/*.js', 'web/js/controllers/*.js'], ['scripts']);
