@@ -67,18 +67,6 @@ App.config(
         metaDescription: 'SC2HL\'s blog post page',
         width: '980'
       })
-      .when('/chairs4gaming', {
-        templateUrl: '/views/chairs4gaming.html',
-        metaTitle: 'Chairs4Gaming',
-        metaDescription: 'Chairs4Gaming',
-        width: '980'
-      })
-      .when('/divisionzero', {
-        templateUrl: '/views/divisionzero.html',
-        metaTitle: 'Division Zero',
-        metaDescription: 'Division Zero',
-        width: '980'
-      })
       .when('/404', {
         templateUrl: '/views/404.html',
         metaTitle: '404',
