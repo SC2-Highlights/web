@@ -22,7 +22,7 @@ App.factory('RandomHighlight', function($resource, configService) {
   );
 });
 
-App.controller('homepageController', function($sce, $scope, $location, $rootScope, Event, RecentHighlight, TopHighlight, RandomHighlight, Twitter) {
+App.controller('homepageController', function($sce, $scope, $location, $rootScope, Event, RecentHighlight, TopHighlight, RandomHighlight) {
   var events = Event.query(
     function() {
       $scope.events = events;
