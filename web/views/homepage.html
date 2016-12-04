@@ -1,4 +1,4 @@
-<div class="col-md-8">
+<div class="col-md-12">
     <h3><span class="glyphicon glyphicon-fire"></span> Most recent Highlights</h3>
     <div ng-repeat="highlight in recentHighlights" class="col-lg-4">
         <div ng-click="goToLink('/highlight/' + highlight.highlight_id)" class="highlight-link-box panel panel-default pointer">
@@ -42,12 +42,4 @@
             <div class="fadeBottom"></div>
         </div>
     </div>
-</div>
-<div class="col-md-4">
-    <h3>Follow us <a href="https://twitter.com/SC2HL">@SC2HL</a></h3>
-    <div class="twitter-timeline">
-        <a target="_blank" href="https://twitter.com/SC2HL/status/{{ tweet.id_str }}" class="tweet" ng-repeat="tweet in twitterFeed">
-			{{ tweet.text }}
-		</div>
-	</div>
 </div>

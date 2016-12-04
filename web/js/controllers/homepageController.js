@@ -22,12 +22,6 @@ App.factory('RandomHighlight', function($resource, configService) {
   );
 });
 
-App.factory('Twitter', function($resource, configService) {
-  return $resource(
-    configService.api_url + '/twitter/'
-  );
-});
-
 App.controller('homepageController', function($sce, $scope, $location, $rootScope, Event, RecentHighlight, TopHighlight, RandomHighlight, Twitter) {
   var events = Event.query(
     function() {
@@ -59,12 +53,6 @@ App.controller('homepageController', function($sce, $scope, $location, $rootScop
   $scope.skipValidation = function(value) {
     return $sce.trustAsHtml(value);
   };
-
-  var twitterFeed = Twitter.query(
-    function() {
-      $scope.twitterFeed = twitterFeed;
-    }
-  );
 
   var recentHighlights = RecentHighlight.query({
       limit: 3
